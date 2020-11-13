@@ -6,7 +6,6 @@
     </div>
     <Footer />
     
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   </div>
 </template>
 
