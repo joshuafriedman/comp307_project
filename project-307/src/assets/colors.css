@@ -1,0 +1,6 @@
+/* this file contains css varaibles */
+/* root makes it global */
+:root {
+    --red: #ff2d1e;
+    --grey: #807272;
+  }
