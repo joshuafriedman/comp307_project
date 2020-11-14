@@ -1,6 +1,9 @@
 /* this file contains css varaibles */
 /* root makes it global */
 :root {
-    --red: #ff2d1e;
-    --grey: #807272;
+    --red: #E85A4F;
+    --light-red: #E98074;
+    --grey: #8E8D8A;
+    --beige: #D8C3A5;
+    --off-white:#EAE7DC;
   }
