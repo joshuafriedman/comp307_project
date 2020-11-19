@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="main">
         <h1>home page</h1>
         <button @click="example1"> button 1 </button>
         <button @click="example2"> button 2 </button>
@@ -19,7 +19,7 @@ export default {
         },
         example2: function(){
             alert("example 2 called")
-        }
+        },
     }
 }
 </script>
