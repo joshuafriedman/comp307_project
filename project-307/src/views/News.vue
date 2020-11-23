@@ -35,6 +35,7 @@ export default {
 #flex-container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 #card-container{
     
