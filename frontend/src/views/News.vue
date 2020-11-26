@@ -14,16 +14,24 @@
                 </div>
             </div>
         </div>
+
+
+        <PersonCard name="bob" />
         
     </div>
 </template>
 
 <script>
 import NewsCard from "../components/NewsCard.vue"
+import PersonCard from "../components/PersonCard.vue"
 export default {
     name: "News",
     components: {
         NewsCard,
+        PersonCard
+    
+    
+    
     },
         data: function(){
         return {
