@@ -1,10 +1,18 @@
 <template>
     <div id="main">
-        <h1> News </h1>
-        <div id="flex-container">
-        <div class="card-container" v-for="news in newses" :key="news.id">
-            <NewsCard :message=news.post :date=news.date />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <div id=sideBar>
+            <button><b>All</b></button> <hr>
+            <button><b>Annoucements</b></button> <hr>
+            <button><b>Awards</b></button>
         </div>
+        <div id = "content">
+        <h1> News </h1>
+            <div id="flex-container">
+                <div class="card-container" v-for="news in newses" :key="news.id">
+                    <NewsCard :message=news.post :date=news.date />
+                </div>
+            </div>
         </div>
         
     </div>
@@ -20,10 +28,12 @@ export default {
         data: function(){
         return {
             newses: [
-                {post: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac ipsum sit amet tortor porta sodales non a dolor. Cras mauris odio, pellentesque vel bibendum ac, rutrum eget neque. Praesent vitae ligula vel quam dapibus faucibus. Donec ullamcorper lorem vitae luctus volutpat. ",date: "01-02-2020"},
-               {post: "Duis lacinia odio at felis lobortis, id elementum leo dictum. Aenean consequat facilisis est, ac mollis mi lobortis facilisis. Maecenas nec tempus libero, ",date: "08-12-2020"},
-                {post:"molestie hendrerit lorem. Sed ultricies dolor lorem, ac facilisis purus pulvinar quis. Nullam lobortis tortor fermentum",date: "01-02-2020"},
-                {post:"orta scelerisque. Nunc pulvinar velit vel blandit luctus. Pellentesque feugiat, sem in tristique tempor, nulla est vestibulum leo, eget elementum velit nulla ac ante.",date: "11-12-2020"},
+                {post: "Virtual Open House",date: "01-02-2020"},
+                {post: "Concerns Related to COVID-19",date: "08-12-2020"},
+                {post:"Three SOCS professors are awarded large grants to use AI to understand cancer",date: "01-02-2020"},
+                {post:"Assistant Professor Oana Balmau wins CORE John Makepeace Bennett Award",date: "11-12-2020"},
+                {post:"Three Faculty Members Join the School of Computer Science",date: "11-12-2020"},
+                {post:"Prof. Siva Reddy won the VentureBeat AI Innovation Award 2020",date: "11-12-2020"},
             ]
         }
     }
@@ -32,14 +42,52 @@ export default {
 </script>
 
 <style scoped>
+#sideBar
+{
+    margin-left: 2.5%;
+    width: 15%;
+    padding-left: 10px;
+    background-color: var(--light-yellow);
+    position: fixed;
+    height: auto;
+}
+#sideBar button
+{
+    width: 100%;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--light-yellow);
+    color: black;
+    border: none;
+    outline: none;
+    text-align: left;
+}
+#sideBar button:hover
+{
+    background-color: var(--dutch-white);
+} 
+.container
+{
+    display: none;
+}
 #flex-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 #card-container{
-    
 
+}
+
+#content{ 
+    background-color: var(--light-yellow); 
+    margin-left: 22.5%; 
+    margin-right: 5%;
+    text-align: left; 
+}
+
+h1 {
+    padding-left: 10px;
 }
 
 </style>

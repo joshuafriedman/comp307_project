@@ -20,14 +20,15 @@ export default {
 #main{
   height: 100px;
   width: 100%;
-  background-color: var(--grey);
+  background-color: var(--navy);
   position:fixed;
   bottom: 0px;
   text-align:initial;
+  color: white;
 }
 a{
   text-decoration: none;
-  color: var(--off-white);
+  color: var(--light-yellow);
 };
 a:visited
 {

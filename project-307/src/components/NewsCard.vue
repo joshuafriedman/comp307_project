@@ -28,10 +28,16 @@ export default {
     #post{
         height: 160px;
         overflow: hidden;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bold;
+        font-size: 15px;
+        text-decoration: underline;
     }
     #date{
         height: 40px;
         position: relative;
         bottom: 10px;
+        padding-left: 10px;
     }
 </style>

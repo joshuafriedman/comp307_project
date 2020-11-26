@@ -1,19 +1,69 @@
 <template>
     <div id="main">
-    <div id = "menu"> 
-            <b>Academics</b> <br>
-            <a href = "#menu"> Undergraduate </a> <br>
-            <a href = "#menu"> Graduate </a> <br>
-            <a href = "#menu"> Courses </a> <br>
-            <a href = "#menu"> Teaching Assistants </a> <br>
-            <a href = "#menu"> Funding </a> <br>
-    </div> 
-    <div id= "box"> 
-        <h1>Computer Science Courses</h1>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <div id=sideBar>
 
+                <button @click="showInfo('undergraduate')"><b>Undergraduate</b><i id="icon2" class="material-icons">expand_more</i></button> 
+                <br/>
+                <div id="undergraduate" class="container">
+                    <a href="#">Overview</a>
+                    <a href="#">Information for Incoming Students</a>
+                    <a href="#">Remote Learning</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Advising</a>
+                    <a href="#">COMP 202/204/208</a>
+                    <a href="#">Streams</a>
+                    <a href="#">Bachelor of Science</a>
+                    <a href="#">Bachelor of Arts</a>
+                    <a href="#">Minor COmputer Science</a>
+                    <a href="#">Games</a>
+                    <a href="#">Research</a>
+                    <a href="#">Internships and Careers</a>
+                    <a href="#">Preparation for Graduate Studies</a>
+                </div>
+                <hr>
+
+                <button @click="showInfo('graduate')"><b>Graduate</b><i id="icon3" class="material-icons">expand_more</i></button> <br/>
+                <div id="graduate" class="container">
+                    <a href="#">Overview</a>
+                    <a href="#">Masters</a>
+                    <a href="#">Ph. D.</a>
+                    <a href="#">Admission</a>
+                    <a href="#">Applying</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <hr>
+
+                <button @click="showInfo('courses')"><b>Courses</b><i id="icon4" class="material-icons">expand_more</i></button> <br/>
+                <div id="courses" class="container">
+                    <a href="#">List of COMP Classes</a>
+                </div>
+                <hr>
+
+                <button @click="showInfo('tas')"><b>Teaching Assitants</b><i id="icon5" class="material-icons">expand_more</i></button> <br/>
+                <div id="tas" class="container">
+                    <a href="#">TA & Research Assitants</a>
+                    <a href="#">TA Awards</a>
+                </div>
+                <hr>
+
+                <button @click="showInfo('funding')"><b>Funding</b><i id="icon6" class="material-icons">expand_more</i></button> <br/>
+                <div id="funding" class="container">
+                    <a href="#">Financial Information</a>
+                    <a href="#">Graduate Scholarships</a>
+                    <a href="#">Expense Reports</a>
+                </div>
+                
+                
+    
+        </div>
+    <div id= "box"> 
+        <h1 id = "heading">Computer Science Courses</h1>
+        <p id = "heading">Click on a course to learn more about it.</p>
+        <hr>
         <div id = "course">
             <h3 id = "COMP102" @click = "showInfo('dropdown1')">COMP 102: Computers and Computing </h3>
-             <div id = "dropdown1"> 
+             <div class = "dropdown" id = "dropdown1"> 
                 <p> A course for students with no previous knowledge of computer science. 
                 The impact of computers on society. Web design and dynamic content. 
                 The inner workings of computers (hardware). Networking principles. 
@@ -30,9 +80,11 @@
             </div> 
         </div> 
 
+        <hr>
+
         <div id = "course">
             <h3 id = "COMP202" @click = "showInfo('dropdown2')">COMP 202: Foundations of Programming </h3>
-             <div id = "dropdown2"> 
+             <div class = "dropdown" id = "dropdown2"> 
                 <p> Introduction to computer programming in a high level language: 
                 variables, expressions, primitive types, methods, conditionals, loops. 
                 Introduction to algorithms, data structures (arrays, strings), modular software design, 
@@ -51,9 +103,11 @@
             </div> 
         </div> 
 
+        <hr>
+
         <div id = "course">
             <h3 id = "COMP206" @click = "showInfo('dropdown3')">COMP 206: Introduction to Software Systems</h3>
-             <div id = "dropdown3"> 
+             <div class = "dropdown" id = "dropdown3"> 
                 <p> Comprehensive overview of programming in C, use of system calls and libraries, 
                 debugging and testing of code; use of developmental tools like make, version control systems.</p>
                 <b>Credits: </b> 3 <br>
@@ -65,9 +119,11 @@
             </div> 
         </div> 
 
+        <hr>
+
         <div id = "course">
             <h3 id = "COMP250" @click = "showInfo('dropdown4')">COMP 250: Introduction to Computer Science</h3>
-             <div id = "dropdown4"> 
+             <div class = "dropdown" id = "dropdown4"> 
                 <p> Mathematical tools (binary numbers, induction, recurrence relations, asymptotic complexity, 
                 establishing correctness of programs), Data structures (arrays, stacks, queues, linked lists, trees,
                  binary trees, binary search trees, heaps, hash tables), Recursive and non-recursive algorithms 
@@ -84,9 +140,11 @@
             </div> 
         </div> 
 
+        <hr>
+
         <div id = "course">
             <h3 id = "COMP303" @click = "showInfo('dropdown5')">COMP 303: Software Design</h3>
-             <div id = "dropdown5"> 
+             <div class = "dropdown" id = "dropdown5"> 
                 <p> Principles, mechanisms, techniques, and tools for object-oriented software design and
                  its implementation, including encapsulation, design patterns, and unit testing.</p>
                 <b>Credits: </b> 3 <br>
@@ -98,10 +156,11 @@
             </div> 
         </div> 
 
+        <hr>
 
         <div id = "course">
             <h3 id = "COMP307" @click = "showInfo('dropdown6')">COMP 307: Principles of Web Development</h3>
-             <div id = "dropdown6"> 
+             <div class = "dropdown" id = "dropdown6"> 
                 <p> The course discusses the major principles, algorithms, languages and technologies that 
                 underlie web development. Students receive practical hands-on experience through a project.</p>
                 <b>Credits: </b> 2 <br>
@@ -135,20 +194,11 @@ export default {
 
 
 <style scoped>
-#menu {
-    background-color: var(--off-white); 
-    width: 200px;
-    text-align: left; 
-    margin-left: 10px; 
-    margin-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-}
 
 #box {
-    background-color: var(--off-white); 
-    margin-left: 10px; 
-    margin-right: 10px;
+    background-color: var(--light-yellow); 
+    margin-left: 22.5%; 
+    margin-right: 5%;
     text-align: left; 
 }
 #course{
@@ -158,11 +208,74 @@ export default {
 }
 
 h3:hover {
-    background-color: var(--grey);
+     background-color: var(--dutch-white);
+     cursor: pointer;
 }
 
-#dropdown1,#dropdown2,#dropdown3,#dropdown4,#dropdown5,#dropdown6 {
+div.dropdown {
     display: none; 
+}
+
+#sideBar
+{
+    margin-left: 2.5%;
+    width: 15%;
+    padding-left: 10px;
+    background-color: var(--light-yellow);
+    position: fixed;
+    height: auto;
+}
+#sideBar button
+{
+    width: 100%;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--light-yellow);
+    color: black;
+    border: none;
+    outline: none;
+    text-align: left;
+}
+.material-icons{
+    float: right;
+}
+#sideBar button:hover
+{
+    background-color: var(--dutch-white);
+} 
+.container
+{
+    display: none;
+}
+#sideBar a:hover
+{
+    background-color: var(--dutch-white);
+}
+#sideBar a
+{
+    text-align: left;
+    height: auto;
+    font-size: 14px;
+    padding: 10px;
+    display:block;
+    text-decoration: none;
+    color: var(--dark-blue);
+}
+
+#course a {
+    color: var(--mred); 
+}
+#course a:visited, a:active{
+    color: var(--navy);
+}
+
+#heading {
+    padding-left: 10px;
+}
+
+hr {
+    margin-left: 10px; 
+    margin-right: 10px;
 }
 
 </style>
