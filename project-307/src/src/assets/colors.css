@@ -1,0 +1,19 @@
+/* this file contains css varaibles */
+/* root makes it global */
+:root {
+    --red: #E85A4F;
+    --light-red: #E98074;
+    --grey: #8E8D8A;
+    --beige: #D8C3A5;
+    --off-white:#EAE7DC;
+    --light-brown:#a13933;
+    --light-pink:#d96f64;
+
+
+    --navy: #151E3F; 
+    --dark-blue: #030027;  
+    --mred: #D93739; 
+    --light-yellow: #F2F3D9;
+    --dutch-white: #DDD8B8;  
+
+  }
