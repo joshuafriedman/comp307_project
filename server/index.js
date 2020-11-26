@@ -15,7 +15,7 @@ app.get("/",(req,res)=>{
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static(__dirname+'/public/')) // ./frontend/dist
     //spa routing
-    app.get(/.*/,(req,res)=> res.sendFile(__dirname +'/public/index.html'))
+    app.get(/.*/,(req,res)=> res.sendFile(__dirname +'/public/index.html')) // ./frontend/dist/index.html
 }
 
 const port = process.env.PORT || 8004
