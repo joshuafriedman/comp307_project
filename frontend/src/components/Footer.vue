@@ -21,7 +21,7 @@ export default {
   height: 100px;
   width: 100%;
   background-color: var(--navy);
-  position:fixed;
+  position:relative;
   bottom: 0px;
   text-align:initial;
   color: white;
