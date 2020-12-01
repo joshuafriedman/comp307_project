@@ -182,10 +182,10 @@ export default {
      methods:{
         showInfo:function(name){
             var x = document.getElementById(name);
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
+            if (x.style.display === "block") {
                 x.style.display = "none";
+            } else {
+                x.style.display = "block";
             }
         },
     } 
