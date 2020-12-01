@@ -1,7 +1,16 @@
 <template>
-    <div id="main">
-        <p id="post"> {{ message }} </p>
-        <p id="date"> {{ date }} </p>
+    <div id="main" :href=link>
+        <a :href=link>
+            <div id="photo">
+                <img :src="require(`../assets/news/${picture}`)">
+            </div> 
+            <div id="text"> 
+                <p id = "message"> {{ message }} </p>
+                <p id = "date"> {{ date }} </p>
+            </div>
+        </a>
+
+         
     </div>
 </template>
 
@@ -9,35 +18,59 @@
 export default {
     name: "NewsCard",
     props:{
+        picture: String, 
         message: String,
         date: String,
+        link: String, 
     },
 
 }
 </script>
 
 <style scoped>
+
+    #photo{
+        position: relative; 
+    }
+    
     #main{
         width: 300px;
-        height: 200px;
-        border: black 1px solid;
+        height: 400px;
         margin: auto;
         font-size: 14px;
         margin: 20px;
+        box-shadow: 10px 5px  5px var(--navy);
     }
-    #post{
-        height: 160px;
+
+    #main:hover{
+        box-shadow:10px  5px 5px var(--mred);
+        cursor: pointer;
+    }
+
+    
+    #message{
         overflow: hidden;
-        padding-left: 10px;
-        padding-right: 10px;
         font-weight: bold;
-        font-size: 15px;
-        text-decoration: underline;
+        font-size: 20px;
+        position: relative; 
+        text-align: center;
+        width: 300px;
+        height: 80px;
+    }
+
+    img{
+        width: 300px; 
+        height: 250px;
+    }
+    a{
+        text-decoration: none; 
+        color: black;
     }
     #date{
-        height: 40px;
         position: relative;
-        bottom: 10px;
-        padding-left: 10px;
+        text-align: right; 
+        bottom: 0; 
+        right: 10px;
     }
+
 </style>
