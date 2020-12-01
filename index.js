@@ -8,21 +8,21 @@ const app = express()
 //middleware
 app.use(bodyParser.json())
 app.use(cors())
-app.use(history());
+// app.use(history());
 
-//app.get("/",(req,res)=>{
-//    res.send("Hello World!")
-//})
+const test = require('./backend/routes/api/mongo')
+app.use('/api/mongo',test)
 
-if(process.env.NODE_ENV === 'production'|| true){
-    app.use(express.static(__dirname+'/public/')) // ./frontend/dist
+// if(process.env.NODE_ENV === 'production')
     //spa routing
-    //app.get(/.*/,(req,res)=> res.sendFile(__dirname +'/frontend/public/index.html')) // ./frontend/dist/index.html
-    app.use(express.static("./frontend/dist"))
-}
+app.use(express.static("./frontend/dist"))
 
-const port = process.env.PORT || 8004
+app.get('/*',(req,res)=>{ //in case user enters a bad url
+    res.redirect('/')
+})
 
+const port = 8004 // process.env.PORT
+ 
 app.listen(port, ()=>{
     console.log(`Server listening on port ${port}`)
 })

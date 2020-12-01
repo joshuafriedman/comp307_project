@@ -6,6 +6,8 @@ import Login from "./views/Login.vue";
 import GeneralInfo from "./views/GeneralInfo.vue";
 import News from "./views/News.vue";
 import People from "./views/People.vue";
+import NewPage from "./views/NewPage.vue";
+
 
 
 
@@ -53,6 +55,11 @@ export default new Router({
         path: "/general-info",
         name: "general-info",
         component: GeneralInfo,
+      },
+      {
+        path: "/new-page",
+        name: "new-page",
+        component: NewPage,
       },
     ]
   });

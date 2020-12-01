@@ -8,6 +8,7 @@
       <router-link to="/news"> News </router-link>
       <router-link to="/general-info"> General Info </router-link>
       <router-link to="/login"> Login </router-link>
+      <router-link to="/new-page"> New Page </router-link>
     </div>
   </div>
 </template>
