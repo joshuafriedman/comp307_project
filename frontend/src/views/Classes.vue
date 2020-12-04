@@ -237,6 +237,28 @@ export default {
                 syllabus: "https://www.cs.mcgill.ca/media/academic/courses/41_COMP_521_mrkKEsg.pdf", 
                 link: "https://www.mcgill.ca/study/2019-2020/courses/comp-521", 
                 },
+
+                {name:"COMP 551: Applied Machine Learning",
+                description:"Selected topics in machine learning and data mining, including clustering, neural networks, support vector machines, decision trees. Methods include feature selection and dimensionality reduction, error estimation and empirical validation, algorithm design and parallelization, and handling of large data sets. Emphasis on good methods and practices for deployment of real systems.",
+                credits:" 4",
+                terms: " Fall 2019, Winter 2020 ",
+                instructor: "Siamak Ravanbakhsh",
+                prereq: " MATH 323 or ECSE 205 or ECSE 305 or equivalent", 
+                other: "Some background in Artificial Intelligence is recommended, e.g. COMP-424 or ECSE-526, but not required.", 
+                syllabus: "https://docs.google.com/document/d/e/2PACX-1vSZmD4LX614Dkd7kzQLv7nxEo2r8PR1jI73dD54Xylk3bQ2QN9rqMV0JYnH93TJFs0N0YCofp373O2U/pub?embedded=true",
+                link: "https://mcgill.ca/study/2019-2020/courses/comp-551",
+                },
+
+                {name:"COMP 557: Fundamentals of Computer Graphics",
+                description:"Fundamental mathematical, algorithmic and representational issues in computer graphics: overview of graphics pipeline, homogeneous coordinates, projective transformations, line-drawing and rasterization, hidden surface removal, surface modelling (quadrics, bicubics, meshes), rendering (lighting, reflectance models, ray tracing, texture mapping), compositing colour perception, and other selected topics.",
+                credits:" 4",
+                terms: " Fall 2019",
+                instructor: " Paul Kry (Fall)",
+                prereq: " MATH 222, MATH 223, COMP 250, COMP 206", 
+                other: "", 
+                syllabus: "https://www.cs.mcgill.ca/~kry/comp557F20/",
+                link: "https://mcgill.ca/study/2019-2020/courses/comp-557",
+                }
             ]
         }
     }

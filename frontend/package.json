@@ -10,7 +10,10 @@
   "dependencies": {
     "@splidejs/vue-splide": "^0.3.5",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.2",
+    "vue": "^2.6.12",
     "vue-router": "^3.4.9"
   },
   "devDependencies": {
