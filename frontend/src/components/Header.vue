@@ -1,6 +1,14 @@
 <template>
   <div id="main">
     <img src="../assets/logo-header.png" alt="CS Logo">
+    <div id='searchbar'> 
+      <form id="search-form" v-on:submit.prevent="search">
+      <input id='search-bar' type="text" v-model="query" placeholder="Search"/> 
+      <button id="search-submit" type="submit" >
+        <img id='search-icon' src="../assets/search-icon.png" alt="">
+    </button>
+</form>
+    </div>
     <div id="menu">
       <router-link to="/"> Home </router-link>
       <router-link to="/classes"> Classes </router-link>
@@ -15,7 +23,17 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data: function(){
+    return{
+      query: ""
+    }
+  },
+  methods: {
+    search: function(){
+      window.location.href = "http://www.google.com/search?q=McGill: "+this.query
+    }
+  }
 };
 </script>
 
@@ -23,10 +41,9 @@ export default {
 #main {
   height: 150px;
   background-color: var(--navy);
- 
+  /* position:relative; */
 }
 #menu {
-  height: 100%;
   position: relative;
   top: 40px;
   color: white;
@@ -43,5 +60,38 @@ export default {
 #menu a:hover {
   text-shadow: 0px 0px 1px black;
   text-decoration: none;
+}
+#searchbar{
+   /* position: absolute;
+  right: 20px; */
+  border-radius: 10px;
+  position: fixed;
+  right: 5%;
+  top: 50px;
+}
+#search-submit{
+  height:31px;
+  width:40px;
+  position: relative;
+  left:-2px;
+  border-left: none;
+  border-top: 2px black solid;
+}
+#search-submit:hover{
+  cursor:pointer;
+  background-color: white;
+}
+
+#search-bar{
+  height:25px;
+  border-right:none;
+  /* border-radius: 5px; */
+}
+#search-form{
+  display: flex;
+  flex-direction: row;
+}
+input#search-bar:focus {
+    outline-width: 0;
 }
 </style>

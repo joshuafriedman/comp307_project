@@ -15,8 +15,8 @@ export default {
     name: "Login",
     data: function(){
         return{
-            Username: "",
-            Password: "",
+            username: "",
+            password: "",
         }
     },
     methods:{

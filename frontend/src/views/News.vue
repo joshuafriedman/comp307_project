@@ -12,7 +12,7 @@
         <hr>
             <div id="flex-container">
                 <div class="card-container" v-for="news in newses" :key="news.id">
-                    <NewsCard :picture=news.picture :message=news.post :link = news.link :date=news.date />
+                    <NewsCard :picture=news.picture :message=news.post :link=news.link :date=news.date />
                 </div>
             </div>
         </div>
