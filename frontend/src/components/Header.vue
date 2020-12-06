@@ -65,7 +65,7 @@ export default {
    /* position: absolute;
   right: 20px; */
   border-radius: 10px;
-  position: fixed;
+  position: absolute;
   right: 5%;
   top: 50px;
 }
