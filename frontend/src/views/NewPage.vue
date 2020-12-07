@@ -10,29 +10,12 @@
         </div>
 
         <div id="content">
-            <hr>
-            <h2>Pages</h2>
-            <hr>
-            <div id="pages">
-                <a href="#">Home</a><br/>
-                <a href="#">Classes</a><br/>
-                <a href="">People</a><br/>
-                <a href="">News</a><br/>
-                <a href="">General Info</a>
-            </div>
+            <input v-model="query" placeholder="Put your request">
+            <button id="submit" @click="submit">submit</button>
             <hr>
             <h2>News</h2>
             <hr>
             <div id="news">
-                <a href="#">Virtual Open House</a><br/>
-                <a href="#">Concerns Related to COVID-19</a><br/>
-                <a href="">BlahBlah</a>
-            </div>
-            <hr>
-            <h2>Login Info</h2>
-            <hr>
-            <div id="login">
-                <a href="#">Login.csv</a><br/>
             </div>
         </div>
     </div>
