@@ -1,72 +1,71 @@
 <template>
     <div id="main">
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <div id=sideBar>
+        <div id = "parent"> 
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <div id="sideBar" class = "child1">
 
-                <button @click="showInfo('undergraduate')"><b>Undergraduate</b><i id="icon2" class="material-icons">expand_more</i></button> 
-                <br/>
-                <div id="undergraduate" class="container">
-                    <a href="#">Overview</a>
-                    <a href="#">Information for Incoming Students</a>
-                    <a href="#">Remote Learning</a>
-                    <a href="#">FAQ</a>
-                    <a href="#">Advising</a>
-                    <a href="#">COMP 202/204/208</a>
-                    <a href="#">Streams</a>
-                    <a href="#">Bachelor of Science</a>
-                    <a href="#">Bachelor of Arts</a>
-                    <a href="#">Minor COmputer Science</a>
-                    <a href="#">Games</a>
-                    <a href="#">Research</a>
-                    <a href="#">Internships and Careers</a>
-                    <a href="#">Preparation for Graduate Studies</a>
-                </div>
+                    <button @click="showInfo('undergraduate')"><b>Undergraduate</b><i id="icon2" class="material-icons">expand_more</i></button> 
+                    <br/>
+                    <div id="undergraduate" class="container">
+                        <a href="#">Overview</a>
+                        <a href="#">Information for Incoming Students</a>
+                        <a href="#">Remote Learning</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Advising</a>
+                        <a href="#">COMP 202/204/208</a>
+                        <a href="#">Streams</a>
+                        <a href="#">Bachelor of Science</a>
+                        <a href="#">Bachelor of Arts</a>
+                        <a href="#">Minor Computer Science</a>
+                        <a href="#">Games</a>
+                        <a href="#">Research</a>
+                        <a href="#">Internships and Careers</a>
+                        <a href="#">Preparation for Graduate Studies</a>
+                    </div>
+                    <hr>
 
-                <button @click="showInfo('graduate')"><b>Graduate</b><i id="icon3" class="material-icons">expand_more</i></button> <br/>
-                <div id="graduate" class="container">
-                    <a href="#">Overview</a>
-                    <a href="#">Masters</a>
-                    <a href="#">Ph. D.</a>
-                    <a href="#">Admission</a>
-                    <a href="#">Applying</a>
-                    <a href="#">FAQ</a>
-                </div>
+                    <button @click="showInfo('graduate')"><b>Graduate</b><i id="icon3" class="material-icons">expand_more</i></button> <br/>
+                    <div id="graduate" class="container">
+                        <a href="#">Overview</a>
+                        <a href="#">Masters</a>
+                        <a href="#">Ph. D.</a>
+                        <a href="#">Admission</a>
+                        <a href="#">Applying</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                    <hr>
 
-                <button @click="showInfo('courses')"><b>Courses</b><i id="icon4" class="material-icons">expand_more</i></button> <br/>
-                <div id="courses" class="container">
-                    <a href="#">List of COMP Classes</a>
-                </div>
+                    <button @click="showInfo('courses')"><b>Courses</b><i id="icon4" class="material-icons">expand_more</i></button> <br/>
+                    <div id="courses" class="container">
+                        <a href="#">List of COMP Classes</a>
+                    </div>
+                    <hr>
 
-                <button @click="showInfo('tas')"><b>Teaching Assitants</b><i id="icon5" class="material-icons">expand_more</i></button> <br/>
-                <div id="tas" class="container">
-                    <a href="#">TA & Research Assitants</a>
-                    <a href="#">TA Awards</a>
-                </div>
+                    <button @click="showInfo('tas')"><b>Teaching Assitants</b><i id="icon5" class="material-icons">expand_more</i></button> <br/>
+                    <div id="tas" class="container">
+                        <a href="#">TA & Research Assitants</a>
+                        <a href="#">TA Awards</a>
+                    </div>
+                    <hr>
 
-                <button @click="showInfo('funding')"><b>Funding</b><i id="icon6" class="material-icons">expand_more</i></button> <br/>
-                <div id="funding" class="container">
-                    <a href="#">Financial Information</a>
-                    <a href="#">Graduate Scholarships</a>
-                    <a href="#">Expense Reports</a>
+                    <button @click="showInfo('funding')"><b>Funding</b><i id="icon6" class="material-icons">expand_more</i></button> <br/>
+                    <div id="funding" class="container">
+                        <a href="#">Financial Information</a>
+                        <a href="#">Graduate Scholarships</a>
+                        <a href="#">Expense Reports</a>
+                    </div>
+            </div>
+            <div id= "content" class = "child2"> 
+                <h1 id = "heading">Computer Science Courses</h1>
+                <p id = "heading">Click on a course to learn more about it.</p>
+                <hr>
+                <div class="card-container" v-for="item in classes" :key="item.id">
+                    <ClassCard :name=item.name :description=item.description :credits = item.credits 
+                    :terms=item.terms :instructor=item.instructor :prereq=item.prereq :other=item.other
+                    :syllabus=item.syllabus :link=item.link />
                 </div>
-                
-                
-    
-        </div>
-    <div id= "box"> 
-        <h1 id = "heading">Computer Science Courses</h1>
-        <p id = "heading">Click on a course to learn more about it.</p>
-         <div id="flex-container">
-            <div class="card-container" v-for="item in classes" :key="item.id">
-                <ClassCard :name=item.name :description=item.description :credits = item.credits 
-                :terms=item.terms :instructor=item.instructor :prereq=item.prereq :other=item.other
-                :syllabus=item.syllabus :link=item.link />
             </div>
         </div>
-
-       
-
-    </div>
     </div>
 </template>
 
@@ -155,7 +154,7 @@ export default {
                 other: "COMP 206 (Corequisite)", 
                 syllabus: "https://www.cs.mcgill.ca/media/academic/courses/11_COMP_273_qtDlIoA.pdf", 
                 link: "https://www.mcgill.ca/study/2019-2020/courses/comp-273", 
-                },
+                },  
 
                 {name:"COMP 302: Programming Languages and Paradigms", 
                 description: "Programming language design issues and programming paradigms. Binding and scoping, parameter passing, lambda abstraction, data abstraction, type checking. Functional and logic programming.", 
@@ -233,28 +232,6 @@ export default {
                 syllabus: "https://www.cs.mcgill.ca/media/academic/courses/41_COMP_521_mrkKEsg.pdf", 
                 link: "https://www.mcgill.ca/study/2019-2020/courses/comp-521", 
                 },
-
-                {name:"COMP 551: Applied Machine Learning",
-                description:"Selected topics in machine learning and data mining, including clustering, neural networks, support vector machines, decision trees. Methods include feature selection and dimensionality reduction, error estimation and empirical validation, algorithm design and parallelization, and handling of large data sets. Emphasis on good methods and practices for deployment of real systems.",
-                credits:" 4",
-                terms: " Fall 2019, Winter 2020 ",
-                instructor: "Siamak Ravanbakhsh",
-                prereq: " MATH 323 or ECSE 205 or ECSE 305 or equivalent", 
-                other: "Some background in Artificial Intelligence is recommended, e.g. COMP-424 or ECSE-526, but not required.", 
-                syllabus: "https://docs.google.com/document/d/e/2PACX-1vSZmD4LX614Dkd7kzQLv7nxEo2r8PR1jI73dD54Xylk3bQ2QN9rqMV0JYnH93TJFs0N0YCofp373O2U/pub?embedded=true",
-                link: "https://mcgill.ca/study/2019-2020/courses/comp-551",
-                },
-
-                {name:"COMP 557: Fundamentals of Computer Graphics",
-                description:"Fundamental mathematical, algorithmic and representational issues in computer graphics: overview of graphics pipeline, homogeneous coordinates, projective transformations, line-drawing and rasterization, hidden surface removal, surface modelling (quadrics, bicubics, meshes), rendering (lighting, reflectance models, ray tracing, texture mapping), compositing colour perception, and other selected topics.",
-                credits:" 4",
-                terms: " Fall 2019",
-                instructor: " Paul Kry (Fall)",
-                prereq: " MATH 222, MATH 223, COMP 250, COMP 206", 
-                other: "", 
-                syllabus: "https://www.cs.mcgill.ca/~kry/comp557F20/",
-                link: "https://mcgill.ca/study/2019-2020/courses/comp-557",
-                }
             ]
         }
     }
@@ -263,42 +240,42 @@ export default {
 
 
 <style scoped>
-
-#box {
-    background-color: var(--light-yellow); 
-    margin-left: 22.5%; 
-    margin-right: 5%;
-    text-align: left; 
-}
-#course{
-    text-align: left;
-    padding-left: 20px; 
-    padding-right: 20px; 
+#main {
+    margin: 20px;
 }
 
- flex-container{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+#parent {
+    display: flex;
+	flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-h3:hover {
-     background-color: var(--dutch-white);
-     cursor: pointer;
+.child1{
+    float: left;
+    height: 240px;
+    flex: 0 1 250px;
+
 }
 
-div.dropdown {
-    display: none; 
+.child2{
+    flex: 0 1 1050px;
+}
+
+@media screen and (max-width: 1400px) {
+    .child1{
+     flex: 0 1 1050px;
+     height: auto;
+  }
 }
 
 #sideBar
 {
-    margin-left: 2.5%;
-    width: 15%;
+    padding-left: 10px;
     background-color: var(--light-yellow);
-    position: fixed;
-    height: auto;
+    margin-top: 10px;
 }
+
 #sideBar button
 {
     width: 100%;
@@ -306,26 +283,23 @@ div.dropdown {
     cursor: pointer;
     background-color: var(--light-yellow);
     color: black;
-    border-color: var(--light-yellow);
+    border: none;
     outline: none;
     text-align: left;
-    height: 100%;
 }
-.material-icons{
-    float: right;
-}
+
 #sideBar button:hover
 {
     background-color: var(--dutch-white);
+    cursor:pointer; 
 } 
-.container
-{
-    display: none;
-}
+
 #sideBar a:hover
 {
     background-color: var(--dutch-white);
+    cursor:pointer; 
 }
+
 #sideBar a
 {
     text-align: left;
@@ -337,12 +311,23 @@ div.dropdown {
     color: var(--dark-blue);
 }
 
-#course a {
-    color: var(--mred); 
+.material-icons{
+    float: right;
 }
-#course a:visited, a:active{
-    color: var(--navy);
+
+.container{
+    display: none;
 }
+
+#content {
+    background-color: var(--light-yellow); 
+    text-align: left; 
+    padding-left:10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
 
 #heading {
     padding-left: 10px;
@@ -353,32 +338,6 @@ hr {
     margin-right: 10px;
 }
 
-@media screen and (max-width: 1000px) {
-    #sideBar button{
-        font-size: 15px;
-    }
-    #sideBar a{
-        font-size: 7px;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    #sideBar button{
-        font-size: 13px;
-    }
-    #sideBar a{
-        font-size: 5px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    #sideBar button{
-        font-size: 9px;
-    }
-    #sideBar a{
-        font-size: 5px;
-    }
-}
 
 
 </style>

@@ -3,8 +3,8 @@
     <img src="../assets/logo-header.png" alt="CS Logo">
     <div id='searchbar'> 
       <form id="search-form" v-on:submit.prevent="search">
-      <input id='search-bar' type="text" placeholder="Search"/> 
-      <button id="search-submit" type="submit" @click="search">
+      <input id='search-bar' type="text" v-model="query" placeholder="Search"/> 
+      <button id="search-submit" type="submit" >
         <img id='search-icon' src="../assets/search-icon.png" alt="">
     </button>
 </form>
@@ -26,13 +26,12 @@ export default {
   name: "Header",
   data: function(){
     return{
-      
+      query: ""
     }
   },
   methods: {
     search: function(){
-      const query = document.getElementById('search-bar').value;
-      window.location.href = "http://www.google.com/search?q=McGill: "+query
+      window.location.href = "http://www.google.com/search?q=McGill: "+this.query
     }
   }
 };
@@ -82,7 +81,6 @@ export default {
   cursor:pointer;
   background-color: white;
 }
-
 #search-bar{
   height:25px;
   border-right:none;
@@ -95,7 +93,6 @@ export default {
 input#search-bar:focus {
     outline-width: 0;
 }
-
 @media screen and (max-width: 700px) {
   #menu a{
     font-size: 8px;
