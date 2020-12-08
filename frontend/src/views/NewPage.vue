@@ -2,11 +2,13 @@
     <div id='main'>
         <!-- write you html inside the main div -->
         <div class="content">
+            <input type="text" id="creator" v-model="text" placeholder="Put your request">
+            <button v-on:click="createPost">Submit</button>
             <hr>
-            <h2>News</h2>
+            <h2>Posts</h2>
             <hr>
-            <div class="error" v-if="error">{{error}}</div>
-            <div class="container">
+            <p class="error" v-if="error">{{error}}</p>
+            <div class="posts-container">
                 <div class="post" v-for="(post, index) in posts" v-bind:item="post" v-bind:index="index" v-bind:key="post.title">
                     {{`${post.createdAt.getDate()}/${post.createdAt.getMonth()}/${post.createdAt.getFullYear()}`}}
                     <p class="text">{{post.text}}</p>
@@ -18,7 +20,7 @@
 
 
 <script>
-import postService from "../../../backend/routes/api/postService";
+//import postService from "../../../backend/routes/api/postService";
 
 export default {
     name: "NewPage",
@@ -32,7 +34,7 @@ export default {
     async created() {
         try
         {
-            this.posts = await postService.getPosts();
+            //this.posts = await postService.getPosts();
         } catch(err){
             this.error = err.message;
         }
