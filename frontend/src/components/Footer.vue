@@ -43,4 +43,11 @@ a:visited
 {
   float: right;
 }
+
+
+@media screen and (max-width: 700px) {
+    #left{
+    font-size: 15px;
+  }
+}
 </style>

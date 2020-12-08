@@ -13,14 +13,19 @@
                     <a href="#">Former Professors</a>
                     <a href="#">In Memoriam</a>
                 </div>
-                <hr>
+
+                <div class="post" v-for="(post, index) in posts" v-bind:item="post" v-bind:index="index" v-bind:key="post.title">
+                    {{ `${post.createdAt.getDate()}/${post.createdAt.getMonth()}/${post.createdAt.getFullYear()}`}}
+                    <p class="text">{{post.text}}</p>
+                </div>
+                
 
                 <button @click="showInfo('staff')"><b>Staff</b><i class="material-icons">expand_more</i></button> <br>
                 <div id="staff" class = "dropdown">
                     <a href="#">Administrative Staff</a>
                     <a href="#">System Staff</a>
                 </div>
-                <hr>
+                
 
                 <button @click="showInfo('community')"><b>Community</b><i class="material-icons">expand_more</i></button> <br>
                 <div id="community" class = "dropdown">
@@ -176,7 +181,6 @@ export default {
     {
         margin-left: 2.5%;
         width: 15%;
-        padding-left: 10px;
         background-color: var(--light-yellow);
         height: auto;
         position:fixed;
@@ -188,7 +192,7 @@ export default {
         cursor: pointer;
         background-color: var(--light-yellow);
         color: black;
-        border: none;
+        border-color: var(--light-yellow);
         outline: none;
         text-align: left;
     }
@@ -255,6 +259,32 @@ export default {
     a:hover{
     text-decoration: underline; 
     }
+
+@media screen and (max-width: 1000px) {
+    #sideBar button{
+        font-size: 15px;
+    }
+    #sideBar a{
+        font-size: 7px;
+    }
+}
+@media screen and (max-width: 800px) {
+    #sideBar button{
+        font-size: 13px;
+    }
+    #sideBar a{
+        font-size: 5px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #sideBar button{
+        font-size: 9px;
+    }
+    #sideBar a{
+        font-size: 5px;
+    }
+}
 
 
 </style>

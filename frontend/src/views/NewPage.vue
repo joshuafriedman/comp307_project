@@ -1,21 +1,18 @@
 <template>
     <div id='main'>
-        <!-- write you html inside the main div hello -->
-        <div id="sidebar">
-            <button id="login">Pages</button>
+        <!-- write you html inside the main div -->
+        <div class="content">
+            <input type="text" id="creator" v-model="text" placeholder="Put your request">
+            <button v-on:click="createPost">Create</button>
             <hr>
-            <button id="login">News</button>
+            <h2>Posts</h2>
             <hr>
-            <button id="login">Login Info</button>
-        </div>
-
-        <div id="content">
-            <input v-model="query" placeholder="Put your request">
-            <button id="submit" @click="submit">submit</button>
-            <hr>
-            <h2>News</h2>
-            <hr>
-            <div id="news">
+            <p class="error" v-if="error">{{error}}</p>
+            <div class="posts-container">
+                <div class="post" v-for="(post, index) in posts" v-bind:item="post" v-bind:index="index" v-bind:key="post.title">
+                    {{`${post.createdAt.getDate()}/${post.createdAt.getMonth()}/${post.createdAt.getFullYear()}`}}
+                    <p class="text">{{post.text}}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -23,10 +20,28 @@
 
 
 <script>
+//import postService from "../../../backend/routes/api/postService";
+
 export default {
     name: "NewPage",
+    data() {
+        return {
+            posts: [],
+            error: '',
+            text: '',
+            }
+        },
+    async created() {
+        try
+        {
+            //this.posts = await postService.getPosts();
+        } catch(err){
+            this.error = err.message;
+        }
+    }
 }
 </script>
+
 
 
 <style scoped>

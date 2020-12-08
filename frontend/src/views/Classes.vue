@@ -21,7 +21,6 @@
                     <a href="#">Internships and Careers</a>
                     <a href="#">Preparation for Graduate Studies</a>
                 </div>
-                <hr>
 
                 <button @click="showInfo('graduate')"><b>Graduate</b><i id="icon3" class="material-icons">expand_more</i></button> <br/>
                 <div id="graduate" class="container">
@@ -32,20 +31,17 @@
                     <a href="#">Applying</a>
                     <a href="#">FAQ</a>
                 </div>
-                <hr>
 
                 <button @click="showInfo('courses')"><b>Courses</b><i id="icon4" class="material-icons">expand_more</i></button> <br/>
                 <div id="courses" class="container">
                     <a href="#">List of COMP Classes</a>
                 </div>
-                <hr>
 
                 <button @click="showInfo('tas')"><b>Teaching Assitants</b><i id="icon5" class="material-icons">expand_more</i></button> <br/>
                 <div id="tas" class="container">
                     <a href="#">TA & Research Assitants</a>
                     <a href="#">TA Awards</a>
                 </div>
-                <hr>
 
                 <button @click="showInfo('funding')"><b>Funding</b><i id="icon6" class="material-icons">expand_more</i></button> <br/>
                 <div id="funding" class="container">
@@ -159,7 +155,7 @@ export default {
                 other: "COMP 206 (Corequisite)", 
                 syllabus: "https://www.cs.mcgill.ca/media/academic/courses/11_COMP_273_qtDlIoA.pdf", 
                 link: "https://www.mcgill.ca/study/2019-2020/courses/comp-273", 
-                },  
+                },
 
                 {name:"COMP 302: Programming Languages and Paradigms", 
                 description: "Programming language design issues and programming paradigms. Binding and scoping, parameter passing, lambda abstraction, data abstraction, type checking. Functional and logic programming.", 
@@ -299,7 +295,6 @@ div.dropdown {
 {
     margin-left: 2.5%;
     width: 15%;
-    padding-left: 10px;
     background-color: var(--light-yellow);
     position: fixed;
     height: auto;
@@ -311,9 +306,10 @@ div.dropdown {
     cursor: pointer;
     background-color: var(--light-yellow);
     color: black;
-    border: none;
+    border-color: var(--light-yellow);
     outline: none;
     text-align: left;
+    height: 100%;
 }
 .material-icons{
     float: right;
@@ -356,5 +352,33 @@ hr {
     margin-left: 10px; 
     margin-right: 10px;
 }
+
+@media screen and (max-width: 1000px) {
+    #sideBar button{
+        font-size: 15px;
+    }
+    #sideBar a{
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #sideBar button{
+        font-size: 13px;
+    }
+    #sideBar a{
+        font-size: 5px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #sideBar button{
+        font-size: 9px;
+    }
+    #sideBar a{
+        font-size: 5px;
+    }
+}
+
 
 </style>

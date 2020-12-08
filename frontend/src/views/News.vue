@@ -2,8 +2,8 @@
     <div id="main">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <div id=sideBar>
-            <button><b>All</b></button> <hr>
-            <button><b>Annoucements</b></button> <hr>
+            <button><b>All</b></button>
+            <button><b>Annoucements</b></button>
             <button><b>Awards</b></button>
         </div>
         <div id = "content">
@@ -50,7 +50,6 @@ export default {
 {
     margin-left: 2.5%;
     width: 15%;
-    padding-left: 10px;
     background-color: var(--light-yellow);
     position: fixed;
     height: auto;
@@ -62,7 +61,7 @@ export default {
     cursor: pointer;
     background-color: var(--light-yellow);
     color: black;
-    border: none;
+    border-color: var(--light-yellow);
     outline: none;
     text-align: left;
 }
@@ -92,6 +91,33 @@ export default {
 
 h1 {
     padding-left: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    #sideBar button{
+        font-size: 15px;
+    }
+    #sideBar a{
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #sideBar button{
+        font-size: 13px;
+    }
+    #sideBar a{
+        font-size: 5px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #sideBar button{
+        font-size: 9px;
+    }
+    #sideBar a{
+        font-size: 5px;
+    }
 }
 
 </style>
