@@ -3,7 +3,7 @@
         <!-- write you html inside the main div -->
         <div class="content">
             <input type="text" id="creator" v-model="text" placeholder="Put your request">
-            <button v-on:click="createPost">Submit</button>
+            <button v-on:click="createPost">Create</button>
             <hr>
             <h2>Posts</h2>
             <hr>
