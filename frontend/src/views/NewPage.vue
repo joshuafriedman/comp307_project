@@ -4,6 +4,7 @@
         <div class="content">
             <input type="text" id="creator" v-model="text" placeholder="Put your request">
             <button v-on:click="createPost">Create</button>
+            
             <hr>
             <h2>Posts</h2>
             <hr>
@@ -20,7 +21,7 @@
 
 
 <script>
-//import postService from "../../../backend/routes/api/postService";
+//import postService from "../../../backend/routes/api/postService.js";
 
 export default {
     name: "NewPage",
@@ -34,7 +35,7 @@ export default {
     async created() {
         try
         {
-            //this.posts = await postService.getPosts();
+            this.posts = await postService.getPosts();
         } catch(err){
             this.error = err.message;
         }

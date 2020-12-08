@@ -8,18 +8,6 @@ const url = "mongodb://127.0.0.1:27017/cs307-group04-DB/";
 
 //Login
 
-/*
-router.get('/', async(req,res) => {
-    const posts = await loadPostsCollection();
-    res.send(await post.find({}));
-})
-
-
-async function load()
-{
-  return client.connect("mongodb://cs307-group04:N5t49f63QbURydG2@http://fall2020-comp307.cs.mcgill.ca:8004/cs307-group04-DB", {useNewUrlParser: true});
-}
-*/
 //Begin page
 router.get('/',(req,res)=>{
     /////////  write code here
@@ -61,6 +49,7 @@ curl "http://fall2020-comp307.cs.mcgill.ca:8004/api/mongo/hello" \
   -X DELETE \
   -H "Content-Type: application/json" 
 */
+
 router.delete('/:title', (req,res) => {
   client.connect(url, function(err, db) {
       if (err) throw err;
@@ -116,50 +105,50 @@ router.get('/getUsers',(req,res)=>{
 })
 
 router.get('/getClasses',(req,res)=>{
-    client.connect(url, function(err, db) {
+  client.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("content");
+      dbo.collection("classes").find({}).toArray(function(err, result) {
         if (err) throw err;
-        var dbo = db.db("content");
-        dbo.collection("classes").find({}).toArray(function(err, result) {
-          if (err) throw err;
-          console.log(result);
-          res.send(result);
-          db.close();
-        });
+        console.log(result);
+        res.send(result);
+        db.close();
       });
+    });
 })
 //news
 router.get('/getNews',(req,res)=>{
-    client.connect(url, function(err, db) {
+  client.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("content");
+      dbo.collection("news").find({}).toArray(function(err, result) {
         if (err) throw err;
-        var dbo = db.db("content");
-        dbo.collection("news").find({}).toArray(function(err, result) {
-          if (err) throw err;
-          console.log(result);
-          res.send(result);
-          db.close();
-        });
+        console.log(result);
+        res.send(result);
+        db.close();
       });
+    });
 })
 
 router.get('/getPeople',(req,res)=>{
-    client.connect(url, function(err, db) {
+  client.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("content");
+      dbo.collection("people").find({}).toArray(function(err, result) {
         if (err) throw err;
-        var dbo = db.db("content");
-        dbo.collection("people").find({}).toArray(function(err, result) {
-          if (err) throw err;
-          console.log(result);
-          res.send(result);
-          db.close();
-        });
+        console.log(result);
+        res.send(result);
+        db.close();
       });
+    });
 })
 
 /*router.post('/updateUsers',(req,res)=>{
-    client.connect(url, function(err, db) {
-        if (err) throw err;
-        var dbo = db.db("content");
-        dbo.collection("users")
-    })
+  client.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("content");
+      dbo.collection("users")
+  })
 })*/
 
 
