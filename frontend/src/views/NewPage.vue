@@ -1,14 +1,6 @@
 <template>
     <div id='main'>
         <!-- write you html inside the main div -->
-        <div id="sidebar">
-            <button id="login">Pages</button>
-            <hr>
-            <button id="login">News</button>
-            <hr>
-            <button id="login">Login Info</button>
-        </div>
-
         <div class="content">
             <hr>
             <h2>News</h2>
