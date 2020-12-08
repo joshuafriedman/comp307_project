@@ -3,8 +3,8 @@
         <div id = "parent"> 
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             <div id="sideBar" class = "child1">
-                <button><b>All</b></button> <hr>
-                <button><b>Annoucements</b></button> <hr>
+                <button><b>All</b></button>
+                <button><b>Annoucements</b></button>
                 <button><b>Awards</b></button>
             </div>
 
@@ -76,10 +76,11 @@ export default {
 
 #sideBar
 {
-    padding-left: 10px;
     background-color: var(--light-yellow);
-    margin-top:10px; 
+    margin-top: 10px;
+    height: fit-content;
 }
+
 #sideBar button
 {
     width: 100%;
@@ -87,7 +88,7 @@ export default {
     cursor: pointer;
     background-color: var(--light-yellow);
     color: black;
-    border: none;
+    border-color: var(--light-yellow);
     outline: none;
     text-align: left;
 }

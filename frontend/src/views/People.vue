@@ -14,14 +14,14 @@
                         <a href="#">Former Professors</a>
                         <a href="#">In Memoriam</a>
                     </div>
-                    <hr>
+                    
 
                     <button @click="showInfo('staff')"><b>Staff</b><i class="material-icons">expand_more</i></button> <br>
                     <div id="staff" class = "container">
                         <a href="#">Administrative Staff</a>
                         <a href="#">System Staff</a>
                     </div>
-                    <hr>
+                    
 
                     <button @click="showInfo('community')"><b>Community</b><i class="material-icons">expand_more</i></button> <br>
                     <div id="community" class = "container">
@@ -180,9 +180,9 @@ export default {
 
     #sideBar
     {
-        padding-left: 10px;
         background-color: var(--light-yellow);
         margin-top: 10px;
+        height: fit-content;
     }
 
     #sideBar button
@@ -192,7 +192,7 @@ export default {
         cursor: pointer;
         background-color: var(--light-yellow);
         color: black;
-        border: none;
+        border-color: var(--light-yellow);
         outline: none;
         text-align: left;
     }

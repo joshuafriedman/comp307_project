@@ -3,14 +3,14 @@
         <div id = "parent"> 
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             <div id="sideBar" class = "child1">
-                <button><b>General Info</b></button> <hr>
-                <button><b>Why Computer Science?</b></button> <hr>
-                <button><b>CEGEP</b></button><hr>
-                <button><b>Freshmen</b></button> <hr>
-                <button><b>Choosing A Major</b></button>  <hr>
-                <button><b>Combining Studies</b></button><hr>
-                <button><b>Internships</b></button> <hr>
-                <button><b>Undergrads</b></button><hr>
+                <button><b>General Info</b></button>
+                <button><b>Why Computer Science?</b></button>
+                <button><b>CEGEP</b></button>
+                <button><b>Freshmen</b></button>
+                <button><b>Choosing A Major</b></button>
+                <button><b>Combining Studies</b></button>
+                <button><b>Internships</b></button>
+                <button><b>Undergrads</b></button>
                 <button><b>Transfer Students</b></button> 
             </div>
 
@@ -131,9 +131,9 @@ export default {
 
 #sideBar
 {
-    padding-left: 10px;
     background-color: var(--light-yellow);
     margin-top: 10px;
+    height: fit-content;
 }
 
 #sideBar button
@@ -143,7 +143,7 @@ export default {
     cursor: pointer;
     background-color: var(--light-yellow);
     color: black;
-    border: none;
+    border-color: var(--light-yellow);
     outline: none;
     text-align: left;
 }
