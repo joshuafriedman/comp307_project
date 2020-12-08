@@ -40,6 +40,8 @@ export default {
         font-size: 14px;
         margin: 20px;
         box-shadow: 10px 5px  5px var(--navy);
+        border-radius: 20px 20px 20px 20px;
+        background-color: var(--dutch-white);
     }
 
     #main:hover{
@@ -56,11 +58,13 @@ export default {
         text-align: center;
         width: 300px;
         height: 80px;
+
     }
 
     img{
         width: 300px; 
         height: 250px;
+        border-radius: 20px 20px 0px 0px;
     }
     a{
         text-decoration: none; 
