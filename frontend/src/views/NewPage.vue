@@ -9,30 +9,16 @@
             <button id="login">Login Info</button>
         </div>
 
-        <div id="content">
-            <hr>
-            <h2>Pages</h2>
-            <hr>
-            <div id="pages">
-                <a href="#">Home</a><br/>
-                <a href="#">Classes</a><br/>
-                <a href="">People</a><br/>
-                <a href="">News</a><br/>
-                <a href="">General Info</a>
-            </div>
+        <div class="content">
             <hr>
             <h2>News</h2>
             <hr>
-            <div id="news">
-                <a href="#">Virtual Open House</a><br/>
-                <a href="#">Concerns Related to COVID-19</a><br/>
-                <a href="">BlahBlah</a>
-            </div>
-            <hr>
-            <h2>Login Info</h2>
-            <hr>
-            <div id="login">
-                <a href="#">Login.csv</a><br/>
+            <div class="error" v-if="error">{{error}}</div>
+            <div class="container">
+                <div class="post" v-for="(post, index) in posts" v-bind:item="post" v-bind:index="index" v-bind:key="post.title">
+                    {{`${post.createdAt.getDate()}/${post.createdAt.getMonth()}/${post.createdAt.getFullYear()}`}}
+                    <p class="text">{{post.text}}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -40,10 +26,28 @@
 
 
 <script>
+import postService from "../../../backend/routes/api/postService";
+
 export default {
     name: "NewPage",
+    data() {
+        return {
+            posts: [],
+            error: '',
+            text: '',
+            }
+        },
+    async created() {
+        try
+        {
+            this.posts = await postService.getPosts();
+        } catch(err){
+            this.error = err.message;
+        }
+    }
 }
 </script>
+
 
 
 <style scoped>

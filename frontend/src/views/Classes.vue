@@ -159,7 +159,7 @@ export default {
                 other: "COMP 206 (Corequisite)", 
                 syllabus: "https://www.cs.mcgill.ca/media/academic/courses/11_COMP_273_qtDlIoA.pdf", 
                 link: "https://www.mcgill.ca/study/2019-2020/courses/comp-273", 
-                },  
+                },
 
                 {name:"COMP 302: Programming Languages and Paradigms", 
                 description: "Programming language design issues and programming paradigms. Binding and scoping, parameter passing, lambda abstraction, data abstraction, type checking. Functional and logic programming.", 
