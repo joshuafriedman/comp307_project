@@ -1,0 +1,27 @@
+import axios from 'axios'
+
+const url = 'http://localhost:8004/api/mongo'
+
+class PostService
+{
+  static getPosts()
+  {
+    window.console.log('calling getposts');
+    return new Promise( (resolve, reject) =>{
+      
+        axios.get(url).then((res)=>{
+          const data = res.data
+          resolve(
+            data
+          )
+        }).catch((err)=>{
+        window.console.log('uh oh error at line 18 postSErvices.js');
+        window.console.log(err);
+        reject(err);
+        })
+    })
+  }
+}
+
+
+export default PostService

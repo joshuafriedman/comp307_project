@@ -2,8 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const history = require('connect-history-api-fallback');
+require('dotenv').config()
 
 const app = express()
+
+
 
 //middleware
 app.use(bodyParser.json())

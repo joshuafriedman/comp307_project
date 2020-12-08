@@ -2,16 +2,17 @@
     <div id='main'>
         <!-- write you html inside the main div -->
         <div class="content">
-            <input type="text" id="creator" v-model="text" placeholder="Put your request">
+            <!-- <input type="text" id="creator" v-model="text" placeholder="Put your request">
             <button v-on:click="createPost">Create</button>
             <hr>
             <h2>Posts</h2>
             <hr>
-            <p class="error" v-if="error">{{error}}</p>
+            <p class="error" v-if="error">{{error}}</p> -->
             <div class="posts-container">
-                <div class="post" v-for="(post, index) in posts" v-bind:item="post" v-bind:index="index" v-bind:key="post.title">
-                    {{`${post.createdAt.getDate()}/${post.createdAt.getMonth()}/${post.createdAt.getFullYear()}`}}
-                    <p class="text">{{post.text}}</p>
+                <div class="post" v-for="post in posts" v-bind:key="post._id">
+                    <!-- {{`${pos.createdAt.getDate()}/${post.createdAt.getMonth()}/${post.createdAt.getFullYear()}`}}
+                    <p class="ttext">{{post.text}}</p> -->
+                    {{ post }}
                 </div>
             </div>
         </div>
@@ -20,7 +21,7 @@
 
 
 <script>
-//import postService from "../../../backend/routes/api/postService";
+import PostService from "../postService.js";
 
 export default {
     name: "NewPage",
@@ -34,7 +35,8 @@ export default {
     async created() {
         try
         {
-            //this.posts = await postService.getPosts();
+            window.console.log('hella;sdlkfja;lskdjf l;k');
+            this.posts = await PostService.getPosts();
         } catch(err){
             this.error = err.message;
         }

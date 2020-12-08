@@ -2,31 +2,25 @@ const express = require('express');
 const mongodb = require('mongodb');
 
 const router = express.Router();
-// const client = mongo.MongoClient;
-const url = "mongodb://cs307-group04:N5t49f63QbURydG2@127.0.0.1:27017/cs307-group04-DB/";
 
-//Login
-// async function load()
-// {
-//   return client.connect("mongodb://cs307-group04:N5t49f63QbURydG2@http://fall2020-comp307.cs.mcgill.ca:8004/cs307-group04-DB", {useNewUrlParser: true});
-// }
-
-
+const uri = process.env.URI;
+const db = process.env.DB;
 
 router.get('/', async(req,res) => {
-    const posts = await loadPostsCollection();
+    const posts = await loadUsersCollection();
     res.send(await posts.find({}).toArray());
 })
 
-async function loadPostsCollection() {
+async function loadUsersCollection() {
   const client = await mongodb.MongoClient.connect(
-    'mongodb://localhost',
+    uri,
     {
-      useNewUrlParser: true
+      useNewUrlParser: true,
+      useUnifiedTopology: true
     }
   );
 
-  return client.db('people').collection('people');
+  return client.db(db).collection('users');
 }
 
 
