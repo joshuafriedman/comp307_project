@@ -1,5 +1,7 @@
 const express = require('express');
 const mongodb = require('mongodb');
+const jwt = require("jsonwebtoken"); //for auth
+
 
 const router = express.Router();
 
@@ -8,7 +10,15 @@ const db = process.env.DB;
 
 router.get('/', async(req,res) => {
     const posts = await loadUsersCollection();
-    res.send(await posts.find({}).toArray());
+    users = await posts.find({}).toArray()
+    username = req.query.username
+    password = req.query.password
+    console.log(users);
+    for(const user of users){
+      console.log(user.username + "  " + user.password)
+      if(username==user.username && password==user.password) res.send("match")
+    }
+    res.send("no-match")
 })
 
 async function loadUsersCollection() {

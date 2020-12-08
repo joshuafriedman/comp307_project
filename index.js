@@ -15,6 +15,8 @@ app.use(cors())
 
 const test = require('./backend/routes/api/mongo')
 app.use('/api/mongo',test)
+const auth = require('./backend/routes/api/auth')
+app.use('/api/auth',auth)
 
 // if(process.env.NODE_ENV === 'production')
     //spa routing

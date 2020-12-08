@@ -37,7 +37,8 @@ export default {
         try
         {
             window.console.log('hella;sdlkfja;lskdjf l;k');
-            this.posts = await PostService.getPosts();
+            this.posts = await PostService.authenticate("admin","vibs");
+            window.console.log('here is posts', this.posts);
         } catch(err){
             this.error = err.message;
         }

@@ -6,7 +6,6 @@ class PostService
 {
   static getPosts()
   {
-    window.console.log('calling getposts');
     return new Promise( (resolve, reject) =>{
       
         axios.get(url).then((res)=>{
@@ -19,6 +18,20 @@ class PostService
         window.console.log(err);
         reject(err);
         })
+    })
+  }
+  static authenticate(username,password){
+    window.console.log('calling authenticate');
+    return new Promise( (resolve,reject)=>{
+      axios.get(url,{params:{username,password}}).then((res)=>{
+        const data = res.data
+        var match = data=='match'? true:false
+        resolve(match)
+      }).catch((err)=>{
+        window.console.log('error on authenticate');
+        window.console.log(err);
+        reject(err)
+      })
     })
   }
 }
