@@ -3,7 +3,7 @@ const mongodb = require('mongodb');
 
 const router = express.Router();
 // const client = mongo.MongoClient;
-const url = "mongodb://127.0.0.1:27017/cs307-group04-DB/";
+const url = "mongodb://cs307-group04:N5t49f63QbURydG2@127.0.0.1:27017/cs307-group04-DB/";
 
 //Login
 // async function load()
