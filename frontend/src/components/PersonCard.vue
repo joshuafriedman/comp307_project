@@ -74,7 +74,7 @@ export default {
     }
 
     #info{  
-        width: 350px;
+        width: 300px;
         margin-left: 10px;
         margin-right:10px;
         padding-top: 10px;
@@ -105,10 +105,7 @@ export default {
         text-decoration: none;
     }
 
-    a:visited, a:active{
-        color: var( --navy);
-    
-    }
+
     a:hover{
     text-decoration: underline; 
     }

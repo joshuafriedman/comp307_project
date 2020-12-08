@@ -1,82 +1,75 @@
 <template>
     <div id="main">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <div id=sideBar>
-                <button @click="showInfo('faculty')"><b>Faculty</b> <i class="material-icons">expand_more</i> </button> <br>
-                <div id="faculty" class = "dropdown">
-                    <a href="#">Director</a>
-                    <a href="#">Professors</a>
-                    <a href="#">Faculty Lecturer</a>
-                    <a href="#">Adjunct Professors</a>
-                    <a href="#">Associate Members</a>
-                    <a href="#">Emeritus Professors</a>
-                    <a href="#">Former Professors</a>
-                    <a href="#">In Memoriam</a>
-                </div>
+        <div id = "parent"> 
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <div id="sideBar" class = "child1">
+                    <button @click="showInfo('faculty')"><b>Faculty</b> <i class="material-icons">expand_more</i> </button> <br>
+                    <div id="faculty" class = "container">
+                        <a href="#">Director</a>
+                        <a href="#">Professors</a>
+                        <a href="#">Faculty Lecturer</a>
+                        <a href="#">Adjunct Professors</a>
+                        <a href="#">Associate Members</a>
+                        <a href="#">Emeritus Professors</a>
+                        <a href="#">Former Professors</a>
+                        <a href="#">In Memoriam</a>
+                    </div>
+                    <hr>
 
-                <div class="post" v-for="(post, index) in posts" v-bind:item="post" v-bind:index="index" v-bind:key="post.title">
-                    {{ `${post.createdAt.getDate()}/${post.createdAt.getMonth()}/${post.createdAt.getFullYear()}`}}
-                    <p class="text">{{post.text}}</p>
-                </div>
-                
+                    <button @click="showInfo('staff')"><b>Staff</b><i class="material-icons">expand_more</i></button> <br>
+                    <div id="staff" class = "container">
+                        <a href="#">Administrative Staff</a>
+                        <a href="#">System Staff</a>
+                    </div>
+                    <hr>
 
-                <button @click="showInfo('staff')"><b>Staff</b><i class="material-icons">expand_more</i></button> <br>
-                <div id="staff" class = "dropdown">
-                    <a href="#">Administrative Staff</a>
-                    <a href="#">System Staff</a>
-                </div>
-                
+                    <button @click="showInfo('community')"><b>Community</b><i class="material-icons">expand_more</i></button> <br>
+                    <div id="community" class = "container">
+                        <a href="#">Women@CS</a>
+                        <a href="#">Supper Camp</a>
+                        <a href="#">CSUS</a>
+                        <a href="#">CSGS</a>
+                    </div>
+            </div>
 
-                <button @click="showInfo('community')"><b>Community</b><i class="material-icons">expand_more</i></button> <br>
-                <div id="community" class = "dropdown">
-                    <a href="#">Women@CS</a>
-                    <a href="#">Supper Camp</a>
-                    <a href="#">CSUS</a>
-                    <a href="#">CSGS</a>
-                </div>
-        </div>
+            <div id = "content" class = "child2">
+                <h1 id = "heading"> Faculty </h1>
+                <p id= "heading" >Click on a Faculty Member's name to find out more about them. <p> <hr>
 
-        <div id = "content">
-            <h1 id = "header"> Faculty </h1>
-            <p id= "header" >Click on a Faculty Member's name to find out more about them. <p> <hr>
-
-            <table> 
-                <tr> 
-                    <td> 
+                <div id = "flex-container">
+                    <div id = "titleChild">
                         <h2> Director of the School </h2>
-                    </td> 
-                    
-                    <td> 
+                    </div>
+                    <div id = "titleChild">
                         <h2> Associate Director of Research </h2>
-                    </td>
-                </tr> 
-            </table>
-            <div id="flex-container">
-                <div class="card-container" v-for="person in directors" :key="person.id">
-                    <PersonCard :name=person.name :website=person.website :office = person.office
-                    :phone = person.phone :email = person.email :picture = person.picture :fields = person.fields />
+                    </div>
+                </div>
+
+                <div id="flex-container">
+                    <div class="card-container" v-for="person in directors" :key="person.id">
+                        <PersonCard :name=person.name :website=person.website :office = person.office
+                        :phone = person.phone :email = person.email :picture = person.picture :fields = person.fields />
+                    </div>
+                </div>
+                <hr>
+
+                <h2 id= "heading">Professors</h2>
+                <div id="flex-container">
+                    <div class="card-container" v-for="person in professors" :key="person.id">
+                        <PersonCard :name=person.name :website=person.website :office = person.office
+                        :phone = person.phone :email = person.email :picture = person.picture :fields = person.fields />
+                    </div>
+                </div>
+                <hr>
+
+                <h2 id= "heading">Faculty Lecturers</h2>
+                <div id="flex-container">
+                    <div class="card-container" v-for="person in facultylecturers" :key="person.id">
+                        <PersonCard :name=person.name :website=person.website :office = person.office
+                        :phone = person.phone :email = person.email :picture = person.picture :fields = person.fields />
+                    </div>
                 </div>
             </div>
-            <hr>
-
-            <h2 id= "header">Professors</h2>
-             <div id="flex-container">
-                <div class="card-container" v-for="person in professors" :key="person.id">
-                    <PersonCard :name=person.name :website=person.website :office = person.office
-                    :phone = person.phone :email = person.email :picture = person.picture :fields = person.fields />
-                </div>
-            </div>
-            <hr>
-
-            <h2 id= "header">Faculty Lecturers</h2>
-             <div id="flex-container">
-                <div class="card-container" v-for="person in facultylecturers" :key="person.id">
-                    <PersonCard :name=person.name :website=person.website :office = person.office
-                    :phone = person.phone :email = person.email :picture = person.picture :fields = person.fields />
-                </div>
-            </div>
-            <hr>
-
         </div>
     </div>
 </template>
@@ -157,34 +150,41 @@ export default {
 </script>
 
 <style scoped>
-
-    .dropdown{
-        display:none;
+    #main{ 
+        margin: 20px;
     }
-    #header{
-        padding-left:10px;
-    }
-    #flex-container{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+    #parent {
+    display: flex;
+	flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
     }
 
-    #content{ 
-        background-color: var(--light-yellow); 
-        margin-left: 22.5%; 
-        margin-right: 5%;
-        text-align: left;
+    .child1{
+        float: left;     
+        height: 140px;   
+        flex: 0 1 250px;
+
+    }
+
+    .child2{
+        flex: 0 1 1050px;
+    }
+
+    @media screen and (max-width: 1400px) {
+        .child1{
+            flex: 0 1 1050px;
+            height: auto;
+        }
     }
 
     #sideBar
     {
-        margin-left: 2.5%;
-        width: 15%;
+        padding-left: 10px;
         background-color: var(--light-yellow);
-        height: auto;
-        position:fixed;
+        margin-top: 10px;
     }
+
     #sideBar button
     {
         width: 100%;
@@ -192,20 +192,15 @@ export default {
         cursor: pointer;
         background-color: var(--light-yellow);
         color: black;
-        border-color: var(--light-yellow);
+        border: none;
         outline: none;
         text-align: left;
-    }
-    .material-icons{
-        float: right;
     }
     #sideBar button:hover
     {
         background-color: var(--dutch-white);
         cursor: pointer;
     } 
-
-
     #sideBar a:hover
     {
         background-color: var(--dutch-white);
@@ -222,15 +217,31 @@ export default {
         color: var(--dark-blue);
     }
 
-    #heading {
-        padding-left: 10px;
+    .material-icons{
+        float: right;
+    }
+
+    .container{
+        display:none;
+    }
+
+    #flex-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     #content{ 
         background-color: var(--light-yellow); 
-        margin-left: 22.5%; 
-        margin-right: 5%;
+        padding-left:10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 10px;
         text-align: left;
+    }
+
+    #heading {
+        padding-left: 10px;
     }
 
     hr{
@@ -238,53 +249,19 @@ export default {
         margin-right: 10px;
     }
 
-    table {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px
+    #titleChild{
+        flex: 1 1 200px;
     }
 
-    td {
-        width: 50%;
-    }
     a {
     color: var(--mred); 
         text-decoration: none;
     }
 
-    a:visited, a:active{
-        color: var( --navy);
-    
-    }
     a:hover{
-    text-decoration: underline; 
+        text-decoration: underline; 
+        cursor:pointer; 
     }
-
-@media screen and (max-width: 1000px) {
-    #sideBar button{
-        font-size: 15px;
-    }
-    #sideBar a{
-        font-size: 7px;
-    }
-}
-@media screen and (max-width: 800px) {
-    #sideBar button{
-        font-size: 13px;
-    }
-    #sideBar a{
-        font-size: 5px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    #sideBar button{
-        font-size: 9px;
-    }
-    #sideBar a{
-        font-size: 5px;
-    }
-}
 
 
 </style>

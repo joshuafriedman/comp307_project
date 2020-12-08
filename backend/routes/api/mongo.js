@@ -1,22 +1,27 @@
 const express = require('express');
-const mongo = require('mongodb');
+const mongodb = require('mongodb');
 
-//var app = express();
 const router = express.Router();
-const client = mongo.MongoClient;
-const url = "mongodb://127.0.0.1:27017/cs307-group04-DB/";
+// const client = mongo.MongoClient;
+const url = "mongodb://cs307-group04:N5t49f63QbURydG2@127.0.0.1:27017/cs307-group04-DB/";
 
 //Login
+// async function load()
+// {
+//   return client.connect("mongodb://cs307-group04:N5t49f63QbURydG2@http://fall2020-comp307.cs.mcgill.ca:8004/cs307-group04-DB", {useNewUrlParser: true});
+// }
+
+
 
 //Begin page
-router.get('/',(req,res)=>{
-    /////////  write code here
-    // code written here will be called whenever you go to /api/test, for example localhost:8004/api/test
+// router.get('/',(req,res)=>{
+//     /////////  write code here
+//     // code written here will be called whenever you go to /api/test, for example localhost:8004/api/test
 
-    console.log("Logged in")
-    res.send("start from here")
-    ///////////////////////
-});
+//     console.log("Logged in")
+//     res.send("start from here")
+//     ///////////////////////
+// });
 
 //Add post
 /*

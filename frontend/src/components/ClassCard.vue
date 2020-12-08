@@ -72,10 +72,6 @@ export default {
         text-decoration: none;
     }
 
-    a:visited, a:active{
-        color: var( --navy);
-    
-    }
     a:hover{
     text-decoration: underline; 
     }

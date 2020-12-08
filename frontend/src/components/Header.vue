@@ -81,7 +81,6 @@ export default {
   cursor:pointer;
   background-color: white;
 }
-
 #search-bar{
   height:25px;
   border-right:none;
@@ -94,7 +93,6 @@ export default {
 input#search-bar:focus {
     outline-width: 0;
 }
-
 @media screen and (max-width: 700px) {
   #menu a{
     font-size: 8px;
