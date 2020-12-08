@@ -1,6 +1,6 @@
 <template>
     <div id='main'>
-        <!-- write you html inside the main div -->
+        <!-- write you html inside the main div hello -->
         <div id="sidebar">
             <button id="login">Pages</button>
             <hr>
