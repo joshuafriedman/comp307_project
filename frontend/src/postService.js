@@ -79,6 +79,22 @@ static getEvents(){
 })
 }
 
+static insertNews(datum,username,password){
+  return axios.post(url+"/news",{params:{username,password},body:{datum}})
+}
+
+static insertEvents(datum,username,password){
+  return axios.post(url+"/events",{params:{username,password},body:{datum}})
+}
+
+static insertpeople(datum,username,password){
+  return axios.post(url+"/people",{params:{username,password},body:{datum}})
+}
+
+static insertClasses(datum,username,password){
+  return axios.post(url+"/classes",{params:{username,password},body:{datum}})
+}
+
 
 }
 

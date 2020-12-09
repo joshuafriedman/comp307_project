@@ -52,6 +52,60 @@ router.get('/people',async(req,res) => { //home page load, news and events
   res.send(people)
 })
 
+router.get('/classes',async(req,res) => { //home page load, news and events
+  const classes_col = await loadUsersCollection('classes')
+  const people = await classes_col.find({}).toArray()
+  res.send(classes)
+})
+
+
+
+
+
+
+router.post('/news',async(req,res) => { //home page load, news and events
+  if(!authe(req)) res.status(401).send()
+  else{
+    const news_col =  await loadUsersCollection('news')
+    console.log('news asdf ')
+    console.log(req.body)
+    console.log(req.params)
+    console.log(req.query)
+    await news_col.insertOne({
+      ...req.body
+    })
+    res.status(201).send()
+}
+})
+
+router.post('/events',async(req,res) => { //home page load, news and events
+  if(!authe(req)) res.status(401).send()
+  else{
+  const events_col = await loadUsersCollection('events')
+  const events = await events_col.find({}).toArray()
+  res.status(201).send()
+  }
+})
+
+router.post('/people',async(req,res) => { //home page load, news and events
+  if(!authe(req)) res.status(401).send()
+  else{
+  const people_col = await loadUsersCollection('people')
+  const people = await people_col.find({}).toArray()
+  res.status(201).send()
+  }
+})
+
+
+router.post('/classes',async(req,res) => { //home page load, news and events
+  if(!authe(req)) res.status(401).send()
+  else{
+  const classes_col = await loadUsersCollection('classes')
+  const classes = await classes_col.find({}).toArray()
+  res.status(201).send()
+  }
+})
+
 
 
 
@@ -67,6 +121,20 @@ async function loadUsersCollection(coll) {
   return client.db(db).collection(coll);
 }
 
+async function authe(req){
+  const posts = await loadUsersCollection('users')
+  var users = await posts.find({}).toArray()
+  var s = false
+  var username = req.query.username
+  var password = req.query.password
+  for(const user of users){
+    if(username==user.username && password==user.password) {
+      s =true
+      break
+    }
+  }
+  return s
+}
 
 
 //Begin page
