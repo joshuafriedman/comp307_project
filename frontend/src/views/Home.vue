@@ -6,10 +6,12 @@
           <div id="slides">
             <splide :options="options">
               <splide-slide>
-                <img id = "slideImg" src="../assets/homepage/homepage1.png" />
+                <a href = "https://www.cs.mcgill.ca"> <img id = "slideImg" src="../assets/homepage/homepage1.png" /> </a>
+                <p> Welcome to Computer Science at McGill </p>
               </splide-slide>
               <splide-slide>
-                <img id = "slideImg" src="../assets/homepage/homepage2.png" />
+               <a href = "https://www.cs.mcgill.ca/donate/"> <img id = "slideImg" src="../assets/homepage/homepage2.png" /></a>
+               <p> Donate to Women In Tech </p>
               </splide-slide>
             </splide>
           </div>
@@ -40,12 +42,12 @@
         <div id = "flex"> 
           <div id = "section"> 
             Resources for Remote Learning
-            <img id = "imgA" src="../assets/homepage/remote.png" />
+            <a href = "https://www.cs.mcgill.ca/news/119/"> <img id = "imgA" src="../assets/homepage/remote.png" /></a>
           </div> 
 
           <div id = "section"> 
             Featured Staff of the Month
-            <img id = "imgA" src="../assets/homepage/Staff.jpeg" />
+            <a href = "https://www.cs.mcgill.ca/~jvybihal/"> <img id = "imgA" src="../assets/homepage/Staff.jpeg" /> </a>
           </div> 
         </div>
       </div> 
@@ -182,6 +184,10 @@ export default {
   #section{
     flex:1 1 100%;
   }
+  #imgA {
+    width: 100px; 
+    height:100px;
+  }
 }
 
 #title{
@@ -241,9 +247,9 @@ export default {
 } 
 
 #imgA {
-  height: 80%;
+  height: 200px;
   margin-top: 5px;
-  width: 80%;
+  width: 250px;
 }
 
 #imgA:hover {
