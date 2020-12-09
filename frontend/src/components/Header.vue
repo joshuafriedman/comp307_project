@@ -1,6 +1,8 @@
 <template>
   <div id="main">
-    <img src="../assets/logo-header.png" alt="CS Logo">
+    <router-link to="/">
+      <img src="../assets/logo-header.png" alt="CS Logo">
+    </router-link>
     <div id='searchbar'> 
       <form id="search-form" v-on:submit.prevent="search">
       <input id='search-bar' type="text" v-model="query" placeholder="Search"/> 
@@ -118,18 +120,15 @@ li{
 a {
   text-decoration: none;
 }
-
 nav {
   left: 18%;
   position: relative;
 }
-
 ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
-
 #top {
 	color: #fff;
   border: 1px solid white;
@@ -147,11 +146,9 @@ ul {
 #top a {
   color: white;
 }
-
 li:hover {
 	background: var(--mred);
 }
-
 #dropdown {
   color: black;
 	visibility: hidden;
@@ -165,7 +162,6 @@ li:hover {
 #dropdown a{
   color: black;
 }
-
 #top:hover > ul,
 ul li ul:hover {
   background-color: var(--dutch-white);
@@ -175,7 +171,6 @@ ul li ul:hover {
   margin-top: 11px;;
   
 }
-
 #item {
 	clear: both;
   width: 200px;
@@ -185,7 +180,6 @@ ul li ul:hover {
   position: relative; 
   z-index:100;
 }
-
 #main {
   height: 150px;
   background-color: var(--navy);
@@ -221,14 +215,11 @@ ul li ul:hover {
 input#search-bar:focus {
     outline-width: 0;
 }
-
 @media screen and (max-width: 1400px) {
   #top a{
     font-size: 13px;
   }
 }
-
 @media screen and (max-width: 800px) {
-
 }
 </style>
