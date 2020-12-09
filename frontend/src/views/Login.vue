@@ -8,10 +8,11 @@
         <b>Password:</b> <input v-model="password" placeholder="Password" />
         <br />
         <div id="error-msg" v-if="show_error_msg">{{ error_msg }}</div>
-        <div id="success-msg" v-if="success">success loging in...</div>
+        
         <input type="submit" value="Login" />
       </div>
     </form>
+    <div id="success-msg" v-if="success">success, loging in...</div>
 
     <br /><br /><br /><br /><br /><br />
     <button v-if="$info.auth" @click="logout">logout</button>
@@ -46,10 +47,10 @@ export default {
         this.$info.username = this.username
         this.$info.password = this.password
       }
-      if (this.$auth)
+      if (this.$info.auth)
         setTimeout(() => {
           that.$router.push("/new-page");
-        });
+        },800);
     },
     logout: function(){
         this.$info.auth = false

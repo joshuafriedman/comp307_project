@@ -2,6 +2,7 @@ import axios from 'axios'
 
 
 const url = 'http://localhost:8004/api/mongo'
+// const auth_url = url+"/auth"
 
 class PostService
 {
@@ -9,7 +10,7 @@ class PostService
   {
     return new Promise( (resolve, reject) =>{
       
-        axios.get(url).then((res)=>{
+        axios.get(url+"/auth").then((res)=>{
           const data = res.data
           resolve(
             data
@@ -24,7 +25,7 @@ class PostService
   static authenticate(username,password){
     window.console.log('calling authenticate');
     return new Promise( (resolve,reject)=>{
-      axios.get(url,{params:{username,password}}).then((res)=>{
+      axios.get(url+"/auth",{params:{username,password}}).then((res)=>{
         const data = res.data
         var match = data=='match'? true:false
         resolve(match)
@@ -35,6 +36,22 @@ class PostService
       })
     })
   }
+
+static getHome(){
+  return new Promise( (resolve, reject) =>{
+      
+    axios.get(url+"/home").then((res)=>{
+      const data = res.data
+      resolve(data)
+    }).catch((err)=>{
+    window.console.log('uh oh error at getHome');
+    window.console.log(err);
+    reject(err);
+    })
+})
+
+}
+
 }
 
 
