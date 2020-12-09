@@ -113,10 +113,6 @@ export default {
 </script>
 
 <style scoped>
-li{
-  position: relative; 
-  z-index:1;
-}
 a {
   text-decoration: none;
 }
@@ -179,7 +175,7 @@ ul li ul:hover {
   height: 30px;
   padding-left: 10px;
   position: relative; 
-  z-index:100;
+  z-index:1;
 }
 #main {
   height: 150px;
