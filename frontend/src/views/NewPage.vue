@@ -65,6 +65,7 @@
     </div>
 
     <div id="people" v-if="'people' == picked" class="center">
+      <h4>Add a person!</h4>
       <form v-on:submit.prevent="submit_people">
       <table> 
         <td>
