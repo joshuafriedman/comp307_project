@@ -5,9 +5,8 @@
     <h3>What would you like to modify</h3>
     <br />
     <div id="flex-container">
-
       <div class="rad">
-          <label for="two">News</label>
+        <label for="two">News</label>
         <input type="radio" id="two" value="news" v-model="picked" />
       </div>
 
@@ -27,14 +26,39 @@
       </div>
     </div>
 
-    <div id="news" v-if="'news'==picked">
-         <h4>Add some news!</h4>
-         
-
+    <div id="news" v-if="'news' == picked">
+      <h4>Add some news!</h4>
+      <form v-on:submit.prevent="submit_news">
+        post: <input type="text" name="" id="" v-model="datum.post" /> link:
+        <input type="text" name="" id="" v-model="datum.link" /> date:
+        <input type="text" name="" id="" v-model="datum.date" />
+        <input type="submit" name="" id="" />
+      </form>
     </div>
-    <div id="events" v-if="'events'==picked"> </div>
-    <div id="people" v-if="'people'==picked"> </div>
-    <div id="classes" v-if="'classes'==picked"> </div>
+    <div id="events" v-if="'events' == picked">
+      <form v-on:submit.prevent="submit_event">
+        message:
+        <input type="text" name="" id="" v-model="datum.message" /> link:
+        <input type="text" name="" id="" v-model="datum.link" /> date:
+        <input type="text" name="" id="" v-model="datum.date" />
+        <input type="submit" name="" id="" />
+      </form>
+    </div>
+    <div id="people" v-if="'people' == picked">
+      <form v-on:submit.prevent="submit_news">
+        post: <input type="text" name="" id="" v-model="datum.post" /> link:
+        <input type="text" name="" id="" v-model="datum.link" />
+        <input type="submit" name="" id="" />
+      </form>
+    </div>
+    <div id="classes" v-if="'classes' == picked">
+      <form v-on:submit.prevent="submit_news">
+        post: <input type="text" name="" id="" v-model="datum.post" /> link:
+        <input type="text" name="" id="" v-model="datum.link" />
+        <input type="submit" name="" id="" />
+      </form>
+    </div>
+    <br> <br> <br> <br>
   </div>
 </template>
 
@@ -47,8 +71,8 @@ export default {
       error: "",
       text: "",
       picked: "",
-      datum: {},
-    }
+      datum:{}
+    };
   },
   methods: {
     test: async function() {
