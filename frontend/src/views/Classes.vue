@@ -3,7 +3,6 @@
         <div id = "parent"> 
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             <div id="sideBar" class = "child1">
-{{data_ready}}
                     <button @click="showInfo('undergraduate')"><b>Undergraduate</b><i id="icon2" class="material-icons">expand_more</i></button> 
                     <br/>
                     <div id="undergraduate" class="container">
