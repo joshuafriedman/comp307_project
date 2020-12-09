@@ -99,7 +99,7 @@ export default {
     for (var i = 0; i < this.newsC.length; i += 1) {
       this.newsC[i].color = i % 2 == 0 ? 'light' : 'dark';
     }
-    for (var i = 0; i < this.events.length; i += 1) {
+    for (i = 0; i < this.events.length; i += 1) {
       this.events[i].color = i % 2 == 0 ? 'light' : 'dark';
     }
 
@@ -112,7 +112,7 @@ export default {
       for (var i = 0; i < this.newsC.length; i += 1) {
         this.newsC[i].color = i % 2 == 0 ? 'light' : 'dark;'
       }
-      for (var i = 0; i < this.events.length; i += 1) {
+      for (i = 0; i < this.events.length; i += 1) {
         this.events[i].color = i % 2 == 0 ? 'light' : 'dark';
       }
     }
