@@ -141,6 +141,7 @@ ul {
 	position: relative;
 	text-decoration: none;
   transition-duration: 0.5s;
+  font-size: 15px;
 }
   
 #top a {
@@ -190,10 +191,9 @@ ul li ul:hover {
   background-color: var(--navy);
 }
 #searchbar{
-   /* position: absolute;
-  right: 20px; */
-  border-radius: 10px;
   position: absolute;
+  right: 20px;
+  border-radius: 10px;
   right: 5%;
   top: 50px;
 }
@@ -221,9 +221,17 @@ ul li ul:hover {
 input#search-bar:focus {
     outline-width: 0;
 }
-@media screen and (max-width: 700px) {
-  #menu a{
-    font-size: 8px;
+
+@media screen and (max-width: 1400px) {
+  #top a{
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+    .child1{
+     flex: 0 1 1050px;
+     height: auto;
   }
 }
 </style>
