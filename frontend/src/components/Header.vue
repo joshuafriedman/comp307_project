@@ -122,6 +122,7 @@ a {
 }
 nav {
   left: 18%;
+  padding-right: 18%;
   position: relative;
 }
 ul {
@@ -220,6 +221,15 @@ input#search-bar:focus {
     font-size: 13px;
   }
 }
+@media screen and (max-width: 1200px) {
+  #main{
+    height: 230px;
+  }
+}
+
 @media screen and (max-width: 800px) {
+  #main{
+    height: 310px;
+  }
 }
 </style>
