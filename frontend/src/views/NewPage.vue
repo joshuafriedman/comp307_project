@@ -143,9 +143,19 @@ export default {
       window.console.log("here si the data");
     },
     submit_news: function(){
-        window.console.log('submiting news');
-        window.console.log(this.datum);
+
         PostService.insertNews(this.datum,this.$info.username,this.$info.password)
+    },
+    submit_events: function(){
+
+        PostService.insertEvents(this.datum,this.$info.username,this.$info.password)
+    },
+    submit_classes: function(){
+
+        PostService.insertClasses(this.datum,this.$info.username,this.$info.password)
+    },
+    submit_people: function(){
+        PostService.insertPeople(this.datum,this.$info.username,this.$info.password)
     }
   }
 };
