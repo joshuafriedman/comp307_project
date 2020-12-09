@@ -119,6 +119,7 @@
           <tr> <input type="text" name="" id="" v-model="datum.link" /></tr>
         </td>
         </table>
+        <input type="submit" name="" id="" />
       </form>
     </div>
     <br> <br> <br> <br>
