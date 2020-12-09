@@ -61,7 +61,10 @@ export default {
         this.success = false
         this.show_error_msg = false
     }
-  }
+  },
+   props:{
+        data_ready:Boolean,
+    },
 };
 </script>
 

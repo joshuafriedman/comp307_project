@@ -84,6 +84,9 @@ export default {
     components: {
         ClassCard,
     },
+    props:{
+        data_ready:Boolean,
+    },
     mounted(){
         window.console.log('in mounted');
         this.classes = JSON.parse(localStorage.data)

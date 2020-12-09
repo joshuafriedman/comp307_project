@@ -65,7 +65,8 @@ import NewsHomeCard from "../components/NewsHomeCard.vue";
 export default {
   name: "Home",
   props: {
-    query: String
+    query: String,
+    data_ready:Boolean
   },
    components: {
     Splide,

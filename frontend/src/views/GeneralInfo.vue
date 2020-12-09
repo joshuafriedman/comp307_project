@@ -96,7 +96,11 @@
 <script>
 export default {
     name: "GeneralInfo",
+     props:{
+        data_ready:Boolean,
+    },
 }
+
 </script>
 
 <style scoped>

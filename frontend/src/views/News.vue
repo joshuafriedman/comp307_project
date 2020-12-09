@@ -29,6 +29,9 @@ export default {
     components: {
         NewsCard,
     },
+     props:{
+        data_ready:Boolean,
+    },
         data: function(){
         return {
             newses: [
