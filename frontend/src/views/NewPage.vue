@@ -26,42 +26,98 @@
       </div>
     </div>
 
-    <div id="news" v-if="'news' == picked">
+    <div id="news" v-if="'news' == picked" class="center">
       <h4>Add some news!</h4>
       <form v-on:submit.prevent="submit_news">
-        post: <input type="text" name="" id="" v-model="datum.post" /> link:
-        <input type="text" name="" id="" v-model="datum.link" /> date:
-        <input type="text" name="" id="" v-model="datum.date" />
+      <table>
+        <td> 
+          <tr>Post: </tr>
+          <tr>Link: </tr>
+          <tr>Date: </tr>
+        </td>
+        <td>
+          <tr><input type="text" name="" id="" v-model="datum.post" /> </tr>
+          <tr><input type="text" name="" id="" v-model="datum.link" /> </tr>
+          <tr><input type="text" name="" id="" v-model="datum.date" /> </tr>
+        </td>
+      </table>
         <input type="submit" name="" id="" />
       </form>
+
     </div>
-    <div id="events" v-if="'events' == picked">
+    <div id="events" v-if="'events' == picked" class="center">
+      <h4>Add an event!</h4>
       <form v-on:submit.prevent="submit_event">
-        message:
-        <input type="text" name="" id="" v-model="datum.message" /> link:
-        <input type="text" name="" id="" v-model="datum.link" /> date:
-        <input type="text" name="" id="" v-model="datum.date" />
+      <table> 
+        <td> 
+          <tr> Message: </tr>
+          <tr> Link: </tr>
+          <tr> Date: </tr>
+        <td>
+        <td>
+          <tr><input type="text" name="" id="" v-model="datum.message" /></tr>
+          <tr><input type="text" name="" id="" v-model="datum.link" /></tr>
+          <tr><input type="text" name="" id="" v-model="datum.date" /> </tr>
+        </td>
+        </table>
         <input type="submit" name="" id="" />
       </form>
     </div>
-    <div id="people" v-if="'people' == picked">
+
+    <div id="people" v-if="'people' == picked" class="center">
       <form v-on:submit.prevent="submit_people">
-        position: <input type="text" name="" id="" v-model="datum.position" />
-        name: <input type="text" name="" id="" v-model="datum.name" />
-        website: <input type="text" name="" id="" v-model="datum.website" />
-        office: <input type="text" name="" id="" v-model="datum.office" />
-        phone: <input type="text" name="" id="" v-model="datum.phone" />
-        email: <input type="text" name="" id="" v-model="datum.email" />
-        picture: <input type="text" name="" id="" v-model="datum.picture" /><br/>
-        fields: <input type="text" name="" id="" v-model="datum.fields" />
+      <table> 
+        <td>
+          <tr>Position: </tr>
+          <tr>Name: </tr>
+          <tr>Link to Website: </tr>
+          <tr>Office:</tr>
+          <tr>Phone: </tr>
+          <tr>Email: </tr>
+          <tr>Fields: </tr>
+        </td> 
+
+        <td> 
+          <tr><input type="text" name="" id="" v-model="datum.position" /></tr> 
+          <tr><input type="text" name="" id="" v-model="datum.name" /></tr>
+          <tr><input type="text" name="" id="" v-model="datum.website" /></tr>
+          <tr><input type="text" name="" id="" v-model="datum.office" /></tr>
+          <tr> <input type="text" name="" id="" v-model="datum.phone" /></tr>
+          <tr><input type="text" name="" id="" v-model="datum.email" /></tr>
+          <tr> <input type="text" name="" id="" v-model="datum.fields" /></tr>
+        </td>
+        </table>
         <input type="submit" name="" id="" />
       </form>
     </div>
-    <div id="classes" v-if="'classes' == picked">
+    <div id="classes" v-if="'classes' == picked" class="center">
+      <h4>Add a class!</h4>
       <form v-on:submit.prevent="submit_news">
-        post: <input type="text" name="" id="" v-model="datum.post" /> link:
-        <input type="text" name="" id="" v-model="datum.link" />
-        <input type="submit" name="" id="" />
+      <table> 
+        <td>
+          <tr>Name: </tr>
+          <tr>Class Description: </tr>
+          <tr>Number of Credits: </tr>
+          <tr>Terms Available:</tr>
+          <tr>Instructor: </tr>
+          <tr>Prerequisites: </tr>
+          <tr>Notes: </tr>
+          <tr>Link to Syllabus: </tr>
+          <tr>Link to Course: </tr>
+        </td> 
+
+        <td> 
+          <tr><input type="text" name="" id="" v-model="datum.name" /></tr> 
+          <tr><input type="text" name="" id="" v-model="datum.description" /></tr>
+          <tr><input type="text" name="" id="" v-model="datum.credits" /></tr>
+          <tr><input type="text" name="" id="" v-model="datum.terms" /></tr>
+          <tr> <input type="text" name="" id="" v-model="datum.instructor" /></tr>
+          <tr><input type="text" name="" id="" v-model="datum.prereq" /></tr>
+          <tr> <input type="text" name="" id="" v-model="datum.other" /></tr>
+          <tr> <input type="text" name="" id="" v-model="datum.syllabus" /></tr>
+          <tr> <input type="text" name="" id="" v-model="datum.link" /></tr>
+        </td>
+        </table>
       </form>
     </div>
     <br> <br> <br> <br>
@@ -82,7 +138,7 @@ export default {
   },
   methods: {
     test: async function() {
-      window.console.log("here si the data");
+      window.console.log("here is the data");
     }
   }
 };
@@ -127,4 +183,10 @@ export default {
   text-align: left;
   height: auto;
 }
+
+.center{
+   display: grid;
+  place-items: center;
+}
+
 </style>
