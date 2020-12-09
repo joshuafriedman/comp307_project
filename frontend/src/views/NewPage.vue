@@ -5,34 +5,36 @@
     <h3>What would you like to modify</h3>
     <br />
     <div id="flex-container">
-        <div class="rad" >
-            <label for="two">Two</label>
-      <input type="radio" id="one" value="One" v-model="picked" />
+
+      <div class="rad">
+          <label for="two">News</label>
+        <input type="radio" id="two" value="news" v-model="picked" />
       </div>
 
-      <div class="rad" >
-        
-      <input type="radio" id="two" value="Two" v-model="picked"/>
+      <div class="rad">
+        <label for="two">Events</label>
+        <input type="radio" id="two" value="events" v-model="picked" />
       </div>
 
-            <div class="rad" >
-        <label for="two">Two</label>
-      <input type="radio" id="two" value="Two" v-model="picked" />
+      <div class="rad">
+        <label for="two">People</label>
+        <input type="radio" id="two" value="people" v-model="picked" />
       </div>
 
-            <div class="rad" >
-        <label for="two">Two</label>
-      <input type="radio" id="two" value="Two" v-model="picked" />
+      <div class="rad">
+        <label for="two">Classes</label>
+        <input type="radio" id="two" value="classes" v-model="picked" />
       </div>
+    </div>
+
+    <div id="news" v-if="'news'==picked">
+         <h4>Add some news!</h4>
+         
 
     </div>
-    <div id="user">
-      <button></button>
-    </div>
-    <div id="news"></div>
-    <div id="events"></div>
-    <div id="people"></div>
-    <div id="classes"></div>
+    <div id="events" v-if="'events'==picked"> </div>
+    <div id="people" v-if="'people'==picked"> </div>
+    <div id="classes" v-if="'classes'==picked"> </div>
   </div>
 </template>
 
@@ -44,8 +46,9 @@ export default {
       posts: [],
       error: "",
       text: "",
-      picked: ""
-    };
+      picked: "",
+      datum: {},
+    }
   },
   methods: {
     test: async function() {
@@ -56,13 +59,13 @@ export default {
 </script>
 
 <style scoped>
-.rad{
-    margin: 30px;
+.rad {
+  margin: 30px;
 }
 #flex-container {
   display: flex;
   flex-direction: row;
-  margin-left:auto;
+  margin-left: auto;
   margin-right: auto;
   justify-content: center;
 }

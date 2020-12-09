@@ -84,6 +84,9 @@ export default {
     components: {
         ClassCard,
     },
+    mounted(){
+        
+    },
 
     data: function(){
         return {

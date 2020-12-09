@@ -79,7 +79,7 @@
             </ul>
         </li>
         <li id = "top"> <router-link to="/login"> {{ log_in_out }} </router-link> </li>
-        <li id = "top"> <router-link to="/new-page" v-if="show_new_page"> New Page </router-link> </li>
+        <li id = "top" v-if="show_new_page"> <router-link to="/new-page" > New Page </router-link> </li>
       </ul>
    </nav>
 
