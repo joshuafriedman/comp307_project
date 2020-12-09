@@ -45,9 +45,15 @@
       </form>
     </div>
     <div id="people" v-if="'people' == picked">
-      <form v-on:submit.prevent="submit_news">
-        post: <input type="text" name="" id="" v-model="datum.post" /> link:
-        <input type="text" name="" id="" v-model="datum.link" />
+      <form v-on:submit.prevent="submit_people">
+        position: <input type="text" name="" id="" v-model="datum.position" />
+        name: <input type="text" name="" id="" v-model="datum.name" />
+        website: <input type="text" name="" id="" v-model="datum.website" />
+        office: <input type="text" name="" id="" v-model="datum.office" />
+        phone: <input type="text" name="" id="" v-model="datum.phone" />
+        email: <input type="text" name="" id="" v-model="datum.email" />
+        picture: <input type="text" name="" id="" v-model="datum.picture" /><br/>
+        fields: <input type="text" name="" id="" v-model="datum.fields" />
         <input type="submit" name="" id="" />
       </form>
     </div>
