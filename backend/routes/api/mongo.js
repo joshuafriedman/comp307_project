@@ -23,12 +23,35 @@ router.get('/auth', async(req,res) => { //authenticate user, return true if auth
 })
 
 router.get('/home',async(req,res) => { //home page load, news and events
-  const news_col =  await loadUsersCollection('news');
-  const events_col = await loadUsersCollection('events');
+  const news_col =  await loadUsersCollection('news')
+  const events_col = await loadUsersCollection('events')
+  const people_col = await loadUsersCollection('people');
+  const classes_col = await loadUsersCollection('classes');
   const news = await news_col.find({}).toArray()
   const events = await events_col.find({}).toArray()
-  res.send({news,events})
+  const people = await people_col.find({}).toArray()
+  const classes = await classes_col.find({}).toArray()
+  res.send({news,events,people,classes})
 })
+
+router.get('/news',async(req,res) => { //home page load, news and events
+  const news_col =  await loadUsersCollection('news')
+  const news = await news_col.find({}).toArray()
+  res.send(news)
+})
+
+router.get('/events',async(req,res) => { //home page load, news and events
+  const events_col = await loadUsersCollection('events')
+  const events = await events_col.find({}).toArray()
+  res.send(events)
+})
+
+router.get('/people',async(req,res) => { //home page load, news and events
+  const people_col = await loadUsersCollection('people')
+  const people = await people_col.find({}).toArray()
+  res.send(people)
+})
+
 
 
 
