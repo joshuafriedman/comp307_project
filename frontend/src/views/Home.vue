@@ -17,30 +17,9 @@
 
       <div id= "news"> 
           <div id = "title"> News  </div>
-          <a id = "light" class = "newsEvent" href= "https://www.cs.mcgill.ca/academic/undergrad/openhouse/">  
-            <p id= "newsTitle"> Virtual Open House 2020 </p> 
-            <p id= "date"> Oct. 25, 2020 </p>
-          </a> 
-          <a id = "dark" class = "newsEvent" href= "https://www.cs.mcgill.ca/news/129/"> 
-            <p id= "newsTitle"> Concerns related to COVID-19 </p> 
-            <p id= "date"> Oct. 5, 2020 </p>
-          </a>
-          <a id = "light" class = "newsEvent" href= "https://www.cs.mcgill.ca/news/132/">  
-            <p id= "newsTitle"> Three SOCS professors are awarded large grants to use AI to understand cancer </p> 
-            <p id= "date"> Nov. 5, 2020 </p>
-          </a> 
-          <a id = "dark" class = "newsEvent" href= "https://www.cs.mcgill.ca/news/131/">  
-            <p id= "newsTitle"> Assistant Professor Oana Balmau wins CORE John Makepeace Bennett Award </p> 
-            <p id= "date"> Oct. 27,2020 </p>
-          </a>
-          <a id = "light" class = "newsEvent" href= "https://www.cs.mcgill.ca/news/128/">  
-            <p id= "newsTitle"> Three Faculty Members Join the School of Computer Science </p> 
-            <p id= "date"> Sept. 1, 2020 </p>
-          </a>
-          <a id = "dark" class = "newsEvent" href= "https://www.cs.mcgill.ca/news/127/"> 
-            <p id= "newsTitle"> Prof. Siva Reddy won the VentureBeat AI Innovation Award 2020</p> 
-            <p id= "date"> Aug. 3, 2020 </p>
-          </a>
+          <div class="card-container" v-for="news in newsC" :key="news.id">
+              <NewsHomeCard :date=news.date :message=news.message :color=news.color :link=news.link />
+          </div>
           <a id = "more" href= "https://www.cs.mcgill.ca/news/"> Click for More News </a>
         </div> 
     </div> 
@@ -79,6 +58,7 @@
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import EventCard from "../components/EventCard.vue";
+import NewsHomeCard from "../components/NewsHomeCard.vue";
 
 export default {
   name: "Home",
@@ -88,7 +68,8 @@ export default {
    components: {
     Splide,
     SplideSlide,
-    EventCard
+    EventCard,
+    NewsHomeCard
   },
   data: function(){
       return {
@@ -100,7 +81,15 @@ export default {
                 {date: "12/05", message: "Understanding the Nanoscopic Structural Framework of Brain Astrocytes", color: "light", link: "https://www.cs.mcgill.ca/events/284/"},
                 {date: "11/13", message: "Virtual Collaboration Techniques to Catalyze Open Innovation", color: "dark", link: "https://www.cs.mcgill.ca/events/283/"},
                 {date: "09/17", message: "McGill IT Services Virtual Fair", color: "light", link: "https://www.cs.mcgill.ca/events/280/"},
-            ]
+          ],
+          newsC: [
+            {date: "Oct.25, 2020", message: "Virtual Open House 2020", color: "light", link: "https://www.cs.mcgill.ca/academic/undergrad/openhouse/"}, 
+            {date: "Oct.5, 2020", message: "Concerns related to COVID-19", color: "dark", link: "https://www.cs.mcgill.ca/academic/undergrad/openhouse/"}, 
+            {date: "Nov.5, 2020", message: "Three SOCS professors are awarded large grants to use AI to understand cancer", color: "light", link: "https://www.cs.mcgill.ca/news/132/"}, 
+            {date: "Oct.27, 2020", message: "Assistant Professor Oana Balmau wins CORE John Makepeace Bennett Award", color: "dark", link: "https://www.cs.mcgill.ca/news/131/"}, 
+            {date: "Sept.1, 2020", message: "Three Faculty Members Join the School of Computer Science", color: "light", link: "https://www.cs.mcgill.ca/news/128/"}, 
+            {date: "Sept.1, 2020", message: "Prof. Siva Reddy won the VentureBeat AI Innovation Award 2020", color: "dark", link: "https://www.cs.mcgill.ca/news/127/"}, 
+          ]
       }
   },
 
@@ -204,42 +193,7 @@ export default {
   background-color: var(--mred);
 }
 
-#newsTitle{
-  padding-top: 5px;
-  margin-top: 0px;
-  text-align: left;
-  padding-left: 10px;
-  font-size: 15px;
-  font-weight:bold;
-  height: 30px;
-  float: left;
-  width: 75%;
-}
-
-#date {
- align-self: flex-end;
- font-size: 10px;
- text-align: right;
-}
-
-#light {
-  background-color: var(--light-yellow); 
-}
-
-#dark {
-  background-color: var(--dutch-white); 
-}
-
-.newsEvent{
-  width: 95%;
-  height: 13%;
-  border-bottom: 1px solid var(--navy);
-  padding-left: 10px;
-  padding-right: 10px;
-  display:inline-flex;
-}
-
-.newsEvent:hover, #more:hover, #moreEvent:hover, section:hover{
+ #more:hover, #moreEvent:hover, section:hover{
   cursor:pointer; 
   color: var(--mred);
   
