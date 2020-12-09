@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 const url = 'http://localhost:8004/api/mongo'
 
 class PostService

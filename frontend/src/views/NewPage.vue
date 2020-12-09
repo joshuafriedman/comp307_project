@@ -7,8 +7,9 @@
             
             <hr>
             <h2>Posts</h2>
-            <hr>
+            <hr>sd
             <p class="error" v-if="error">{{error}}</p> -->
+            <button @click="test">test</button>
             <div class="posts-container">
                 <div class="post" v-for="post in posts" v-bind:key="post._id">
                     <!-- {{`${pos.createdAt.getDate()}/${post.createdAt.getMonth()}/${post.createdAt.getFullYear()}`}}
@@ -31,6 +32,12 @@ export default {
             posts: [],
             error: '',
             text: '',
+            }
+        },
+        methods:{
+            test: function(){
+                window.console.log("here is somethinadsf as " + this.$v  );
+                window.console.log(this.$username);
             }
         },
     async created() {
