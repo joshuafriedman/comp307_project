@@ -13,7 +13,7 @@
               </splide-slide>
             </splide>
           </div>
-        </div> 
+        </div>
 
         <div id= "news"> 
           <div id = "title"> News  </div>
