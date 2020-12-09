@@ -144,7 +144,8 @@ export default {
     },
     submit_news: function(){
 
-        PostService.insertNews(this.datum,this.$info.username,this.$info.password)
+        var a = PostService.insertNews(this.datum,this.$info.username,this.$info.password)
+        window.console.log(a);
     },
     submit_events: function(){
 

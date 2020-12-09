@@ -69,7 +69,7 @@ router.post('/news',async(req,res) => { //home page load, news and events
     const news_col =  await loadUsersCollection('news')
     console.log('news asdf ')
     await news_col.insertOne({
-      ...req.body.body
+      ...req.body.body.datum
     })
     res.status(201).send()
 }
@@ -80,7 +80,7 @@ router.post('/events',async(req,res) => { //home page load, news and events
   else{
   const events_col = await loadUsersCollection('events')
   await events_col.insertOne({
-    ...req.body.body
+    ...req.body.body.datum
   })
   res.status(201).send()
   }
@@ -91,7 +91,7 @@ router.post('/people',async(req,res) => { //home page load, news and events
   else{
   const people_col = await loadUsersCollection('people')
   await people_col.insertOne({
-    ...req.body.body
+    ...req.body.body.datum
   })
   res.status(201).send()
   }
@@ -103,7 +103,7 @@ router.post('/classes',async(req,res) => { //home page load, news and events
   else{
   const classes_col = await loadUsersCollection('classes')
   await classes_col.insertOne({
-    ...req.body.body
+    ...req.body.body.datum
   })
   res.status(201).send()
   }
