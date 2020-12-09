@@ -97,21 +97,23 @@ export default {
     this.events = JSON.parse(localStorage.data).events;
     this.newsC = JSON.parse(localStorage.data).news;
     for (var i = 0; i < this.newsC.length; i += 1) {
-      this.newsC[i].color = i % 2 == 0 ? light : dark;
+      this.newsC[i].color = i % 2 == 0 ? 'light' : 'dark';
     }
     for (var i = 0; i < this.events.length; i += 1) {
-      this.events[i].color = i % 2 == 0 ? light : dark;
+      this.events[i].color = i % 2 == 0 ? 'light' : 'dark';
     }
+
   },
   watch: {
     data_ready: function() {
+
       this.events = JSON.parse(localStorage.data).events;
       this.newsC = JSON.parse(localStorage.data).news;
       for (var i = 0; i < this.newsC.length; i += 1) {
-        this.newsC[i].color = i % 2 == 0 ? light : dark;
+        this.newsC[i].color = i % 2 == 0 ? 'light' : 'dark;'
       }
       for (var i = 0; i < this.events.length; i += 1) {
-        this.events[i].color = i % 2 == 0 ? light : dark;
+        this.events[i].color = i % 2 == 0 ? 'light' : 'dark';
       }
     }
   },
