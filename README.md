@@ -19,7 +19,11 @@ npm run dev
 Then, go to this web site: http://fall2020-comp307.cs.mcgill.ca:8004/
 
 prospective -> general info
+
 academic -> classes
+
 people -> faculty
+
 news -> all
+
 login -> editable page(NewPage)
