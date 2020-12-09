@@ -87,7 +87,7 @@ export default {
         data_ready:Boolean,
     },
     mounted(){
-        this.classes = JSON.parse(localStorage.data)
+        this.classes = JSON.parse(localStorage.data).classes
 
     },
     watch:{

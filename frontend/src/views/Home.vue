@@ -26,7 +26,7 @@
         <div class="card-container" v-for="news in newsC" :key="news.id">
           <NewsHomeCard
             :date="news.date"
-            :message="news.message"
+            :message="news.post"
             :color="news.color"
             :link="news.link"
           />

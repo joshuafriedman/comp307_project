@@ -64,10 +64,12 @@ router.get('/classes',async(req,res) => { //home page load, news and events
 
 
 router.post('/news',async(req,res) => { //home page load, news and events
-  if(!authe(req)) res.status(401).send()
+  const p = await authe(req);
+  if(!p) {
+    res.status(401).send()
+  }
   else{
     const news_col =  await loadUsersCollection('news')
-    console.log('news asdf ')
     await news_col.insertOne({
       ...req.body.body.datum
     })
@@ -76,7 +78,8 @@ router.post('/news',async(req,res) => { //home page load, news and events
 })
 
 router.post('/events',async(req,res) => { //home page load, news and events
-  if(!authe(req)) res.status(401).send()
+  const p = await authe(req)
+  if(!p) res.status(401).send()
   else{
   const events_col = await loadUsersCollection('events')
   await events_col.insertOne({
@@ -87,7 +90,8 @@ router.post('/events',async(req,res) => { //home page load, news and events
 })
 
 router.post('/people',async(req,res) => { //home page load, news and events
-  if(!authe(req)) res.status(401).send()
+  const p = await authe(req)
+  if(!p) res.status(401).send()
   else{
   const people_col = await loadUsersCollection('people')
   await people_col.insertOne({
@@ -99,7 +103,8 @@ router.post('/people',async(req,res) => { //home page load, news and events
 
 
 router.post('/classes',async(req,res) => { //home page load, news and events
-  if(!authe(req)) res.status(401).send()
+  const p = await authe(req)
+  if(!p) res.status(401).send()
   else{
   const classes_col = await loadUsersCollection('classes')
   await classes_col.insertOne({
@@ -130,8 +135,10 @@ async function authe(req){
   var s = false
   var username = req.body.params.username
   var password = req.body.params.password
+  console.log(username +"  76767676767  " + password)
   for(const user of users){
     if(username==user.username && password==user.password) {
+      console.log(user.username + " 5555555 " + user.password)
       s =true
       break
     }

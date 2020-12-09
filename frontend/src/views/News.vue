@@ -34,8 +34,7 @@ export default {
     },
         mounted(){
         window.console.log('in mounted');
-        this.newses = JSON.parse(localStorage.data)
-        window.console.log(this.classes);
+        this.newses = JSON.parse(localStorage.data).news
         window.console.log('end');
     },
         watch:{
