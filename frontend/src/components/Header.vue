@@ -5,7 +5,7 @@
     </router-link>
     <div id='searchbar'> 
       <form id="search-form" v-on:submit.prevent="search">
-      <input id='search-bar' type="text" v-model="query" placeholder="Search"/> 
+      <input id='search-bar' type="text"  placeholder="Search"/> 
       <button id="search-submit" type="submit" >
         <img id='search-icon' src="../assets/search-icon.png" alt="">
      </button>
@@ -79,7 +79,7 @@
             </ul>
         </li>
         <li id = "top"> <router-link to="/login"> {{ log_in_out }} </router-link> </li>
-        <li id = "top"> <router-link to="/new-page" v-if="show_new_page"> New Page </router-link> </li>
+        <li id = "top" v-if="show_new_page"> <router-link to="/new-page" > New Page </router-link> </li>
       </ul>
    </nav>
 

@@ -49,8 +49,36 @@ static getHome(){
     reject(err);
     })
 })
-
 }
+
+static getNews(){
+  return new Promise( (resolve, reject) =>{
+      
+    axios.get(url+"/news").then((res)=>{
+      const data = res.data
+      resolve(data)
+    }).catch((err)=>{
+    window.console.log('uh oh error at getNews');
+    window.console.log(err);
+    reject(err);
+    })
+})
+}
+
+static getEvents(){
+  return new Promise( (resolve, reject) =>{
+      
+    axios.get(url+"/events").then((res)=>{
+      const data = res.data
+      resolve(data)
+    }).catch((err)=>{
+    window.console.log('uh oh error at getEvents');
+    window.console.log(err);
+    reject(err);
+    })
+})
+}
+
 
 }
 
