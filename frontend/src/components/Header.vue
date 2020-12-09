@@ -9,8 +9,7 @@
      </button>
     </form>
     </div>
-
-    <nav role="navigation">
+    <nav role="navigation" class="child1">
       <ul>
         <li id = "top"><a href="/">Home</a></li>
         <li id = "top"><a href="#">Prospective</a>
@@ -137,11 +136,12 @@ ul {
 	display: block;
 	float: left;
   padding: 10px;
-  margin: 5px;
+  margin: 25px 10px;
 	position: relative;
 	text-decoration: none;
   transition-duration: 0.5s;
   font-size: 15px;
+  margin-bottom: 20px;
 }
   
 #top a {
@@ -228,10 +228,7 @@ input#search-bar:focus {
   }
 }
 
-@media screen and (max-width: 1400px) {
-    .child1{
-     flex: 0 1 1050px;
-     height: auto;
-  }
+@media screen and (max-width: 800px) {
+
 }
 </style>
