@@ -5,7 +5,7 @@
     </router-link>
     <div id='searchbar'> 
       <form id="search-form" v-on:submit.prevent="search">
-      <input id='search-bar' type="text" v-model="query" placeholder="Search"/> 
+      <input id='search-bar' type="text"  placeholder="Search"/> 
       <button id="search-submit" type="submit" >
         <img id='search-icon' src="../assets/search-icon.png" alt="">
      </button>
