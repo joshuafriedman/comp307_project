@@ -32,14 +32,16 @@ export default {
      props:{
         data_ready:Boolean,
     },
+        mounted(){
+        window.console.log('in mounted');
+        this.newses = JSON.parse(localStorage.data)
+        window.console.log(this.classes);
+        window.console.log('end');
+    },
         data: function(){
         return {
             newses: [
-                {picture: "openhouse.jpg", post: "Virtual Open House",link : "https://www.cs.mcgill.ca/academic/undergrad/openhouse/", date: "October 25,2020"},
-                {picture: "covid.png", post: "Concerns Related to COVID-19", link: "https://www.cs.mcgill.ca/news/129/", date: "October 5,2020"},
-                {picture: "balmau.jpg", post:"Assistant Professor Oana Balmau wins CORE John Makepeace Bennett Award", link: "", date: "October 27,2020"},
-                {picture: "default.png", post:"Three Faculty Members Join the School of Computer Science", link: "", date: "September 1,2020"},
-                {picture: "reddy.jpg", post:"Prof. Siva Reddy won the VentureBeat AI Innovation Award 2020", link: "", date: "August 3,2020"},
+
             ]
         }
     }
