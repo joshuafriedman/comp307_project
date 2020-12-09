@@ -96,9 +96,24 @@ export default {
     components: {
         PersonCard,
     },
+            mounted(){
+        this.people = JSON.parse(localStorage.data).people
+        // code here
+        
+        
+    },
+        watch:{
+        data_ready: function(){
+
+            this.people = JSON.parse(localStorage.data).people
+            //code here
+            
+
+        }
+    },
 
     data: function(){
-        return {
+        return {people:[],
             directors: [
                 {name: "Bettina Kemme", website: "https://www.cs.mcgill.ca/~kemme/", office: "McConnell 109N/318 (Director)", 
                 phone: "+1-514-398-8930", email: "kemme@cs.mcgill.ca", picture: "Kemme.jpg", 

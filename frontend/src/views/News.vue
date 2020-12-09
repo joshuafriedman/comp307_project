@@ -38,6 +38,13 @@ export default {
         window.console.log(this.classes);
         window.console.log('end');
     },
+        watch:{
+        data_ready: function(){
+
+            this.newses = JSON.parse(localStorage.data).news
+
+        }
+    },
         data: function(){
         return {
             newses: [

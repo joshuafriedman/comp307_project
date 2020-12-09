@@ -33,7 +33,7 @@ export default {
     window.console.log('App mounted')
     const data = await PostService.getHome()
     localStorage.data = JSON.stringify(data)
-    this.read = true
+    this.ready = true
     window.console.log('stored in local storage');
   }
 }
