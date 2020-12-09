@@ -155,6 +155,7 @@ li:hover {
 	left: 0;
   display: none;
   text-align: left;
+  z-index:1;
 }
 #dropdown a{
   color: black;
