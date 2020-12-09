@@ -40,7 +40,7 @@
                     <div id = "titleChild">
                         <h2> Director of the School </h2>
                     </div>
-                    <div id = "titleChild">
+                    <div id = "titleChild" class="tohide">
                         <h2> Associate Director of Research </h2>
                     </div>
                 </div>
@@ -176,7 +176,10 @@ export default {
             flex: 0 1 1050px;
             height: auto;
         }
+        
     }
+
+    
 
     #sideBar
     {
@@ -261,6 +264,12 @@ export default {
     a:hover{
         text-decoration: underline; 
         cursor:pointer; 
+    }
+
+    @media screen and (max-width: 1075px){
+        .tohide{
+            display:none;
+        }
     }
 
 
