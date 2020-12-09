@@ -113,15 +113,12 @@ export default {
 </script>
 
 <style scoped>
-li{
-  position: relative; 
-  z-index:1;
-}
 a {
   text-decoration: none;
 }
 nav {
   left: 18%;
+  padding-right: 18%;
   position: relative;
 }
 ul {
@@ -158,6 +155,7 @@ li:hover {
 	left: 0;
   display: none;
   text-align: left;
+  z-index:1;
 }
 #dropdown a{
   color: black;
@@ -178,7 +176,7 @@ ul li ul:hover {
   height: 30px;
   padding-left: 10px;
   position: relative; 
-  z-index:100;
+  z-index:1;
 }
 #main {
   height: 150px;
@@ -220,6 +218,15 @@ input#search-bar:focus {
     font-size: 13px;
   }
 }
+@media screen and (max-width: 1200px) {
+  #main{
+    height: 230px;
+  }
+}
+
 @media screen and (max-width: 800px) {
+  #main{
+    height: 310px;
+  }
 }
 </style>
