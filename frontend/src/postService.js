@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-const url = 'http://localhost:8004/api/mongo'
+const url = '/api/mongo'//'http://localhost:8004/api/mongo'
 // const auth_url = url+"/auth"
 
 class PostService
