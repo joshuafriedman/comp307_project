@@ -1,7 +1,5 @@
 const express = require('express');
 const mongodb = require('mongodb');
-const jwt = require("jsonwebtoken"); //for auth
-
 
 
 const router = express.Router();
@@ -9,15 +7,13 @@ const router = express.Router();
 const uri = process.env.URI;
 const db = process.env.DB;
 
-router.get('/', async(req,res) => {
-    const posts = await loadUsersCollection()
-    users = await posts.find({}).toArray()
-    username = req.query.username
-    password = req.query.password
-    console.log(users);
-    s = "no-match"
+router.get('/auth', async(req,res) => { //authenticate user, return true if authentic
+    const posts = await loadUsersCollection('users')
+    var users = await posts.find({}).toArray()
+    var username = req.query.username
+    var password = req.query.password
+    var s = "no-match"
     for(const user of users){
-      console.log(user.username + "  " + user.password)
       if(username==user.username && password==user.password) {
         s ="match"
         break
@@ -26,7 +22,17 @@ router.get('/', async(req,res) => {
     res.send(s)
 })
 
-async function loadUsersCollection() {
+router.get('/home',async(req,res) => { //home page load, news and events
+  const news_col =  await loadUsersCollection('news');
+  const events_col = await loadUsersCollection('events');
+  const news = await news_col.find({}).toArray()
+  const events = await events_col.find({}).toArray()
+  res.send({news,events})
+})
+
+
+
+async function loadUsersCollection(coll) {
   const client = await mongodb.MongoClient.connect(
     uri,
     {
@@ -35,7 +41,7 @@ async function loadUsersCollection() {
     }
   );
 
-  return client.db(db).collection('users');
+  return client.db(db).collection(coll);
 }
 
 

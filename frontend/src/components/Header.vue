@@ -16,7 +16,7 @@
       <router-link to="/news"> News </router-link>
       <router-link to="/general-info"> General Info </router-link>
       <router-link to="/login"> {{ log_in_out }} </router-link>
-      <router-link to="/new-page" v-if="show_new_page"> New Page </router-link>
+      <router-link to="/new-page" v-if="show_new_page"> Edit Here </router-link>
     </div>
   </div>
 </template>

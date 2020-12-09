@@ -1,5 +1,7 @@
 <template>
     <div id='main'>
+        <h2>Welcome {{ $info.username }}</h2>
+        <br>
         <!-- write you html inside the main div -->
         <div class="content">
             <!-- <input type="text" id="creator" v-model="text" placeholder="Put your request">
@@ -35,9 +37,11 @@ export default {
             }
         },
         methods:{
-            test: function(){
-                window.console.log("here is somethinadsf as " + this.$v  );
-                window.console.log(this.$username);
+            test: async function(){
+                // get news and events
+                const data = await PostService.getHome()
+                window.console.log('here si the data');
+                window.console.log(data);
             }
         },
     async created() {
