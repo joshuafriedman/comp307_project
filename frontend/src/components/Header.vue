@@ -15,8 +15,8 @@
       <router-link to="/people"> People </router-link>
       <router-link to="/news"> News </router-link>
       <router-link to="/general-info"> General Info </router-link>
-      <router-link to="/login"> Login </router-link>
-      <router-link to="/new-page"> New Page </router-link>
+      <router-link to="/login"> {{ log_in_out }} </router-link>
+      <router-link to="/new-page" v-if="show_new_page"> New Page </router-link>
     </div>
   </div>
 </template>
@@ -26,15 +26,25 @@ export default {
   name: "Header",
   data: function(){
     return{
-      
+      log_in_out: "Login"
     }
   },
   methods: {
     search: function(){
       const query = document.getElementById('search-bar').value
       window.location.href = "http://www.google.com/search?q=McGill: "+query
+    },
+    
+  },
+  props:{
+    show_new_page: Boolean,
+  },
+  watch:{
+    show_new_page: function(val){
+      this.log_in_out = !val? "Login": "Logout"
     }
   }
+
 };
 </script>
 

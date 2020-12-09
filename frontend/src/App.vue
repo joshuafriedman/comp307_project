@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header />
-    <router-view />
+    <Header :show_new_page=show_new />
+    <router-view v-on:updatee="updater" />
     <Footer />
     
   </div>
@@ -16,6 +16,16 @@ export default {
   components: {
     Header,
     Footer
+  },
+  data: function(){
+    return{
+      show_new: false
+    }
+  },
+  methods:{
+    updater: function(val){
+      this.show_new = val
+    }
   }
 }
 </script>

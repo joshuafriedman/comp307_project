@@ -6,6 +6,9 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+
+Vue.prototype.$info = {username: null,password: null, auth:false}
+
 new Vue({
   router,
   render: h => h(App),
