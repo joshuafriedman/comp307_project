@@ -114,7 +114,7 @@ export default {
 <style scoped>
 li{
   position: relative; 
-  z-index:100;
+  z-index:1;
 }
 a {
   text-decoration: none;
