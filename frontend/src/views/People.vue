@@ -89,6 +89,9 @@ export default {
             }
         }
     },
+     props:{
+        data_ready:Boolean,
+    },
 
     components: {
         PersonCard,

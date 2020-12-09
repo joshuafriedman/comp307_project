@@ -84,6 +84,9 @@ export default {
     components: {
         ClassCard,
     },
+    props:{
+        data_ready:Boolean,
+    },
     mounted(){
         
     },
