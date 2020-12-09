@@ -94,6 +94,7 @@ export default {
     NewsHomeCard
   },
   mounted() {
+  try{
     this.events = JSON.parse(localStorage.data).events;
     this.newsC = JSON.parse(localStorage.data).news;
     for (var i = 0; i < this.newsC.length; i += 1) {
@@ -102,11 +103,18 @@ export default {
     for (i = 0; i < this.events.length; i += 1) {
       this.events[i].color = i % 2 == 0 ? 'light' : 'dark';
     }
+    if(!this.events || this.events.length==0) this.events=this.alt_events
+    if(!this.newsC || this.newsC.length==0) this.newsC=this.alt_newsC
+  }
+  catch(err){
+        if(!this.events || this.events.length==0) this.events=this.alt_events
+    if(!this.newsC || this.newsC.length==0) this.newsC=this.alt_newsC
+  }
 
   },
   watch: {
     data_ready: function() {
-
+      try{
       this.events = JSON.parse(localStorage.data).events;
       this.newsC = JSON.parse(localStorage.data).news;
       for (var i = 0; i < this.newsC.length; i += 1) {
@@ -115,6 +123,14 @@ export default {
       for (i = 0; i < this.events.length; i += 1) {
         this.events[i].color = i % 2 == 0 ? 'light' : 'dark';
       }
+      if(!this.events || this.events.length==0) this.events=this.alt_events
+      if(!this.newsC || this.newsC.length==0) this.newsC=this.alt_newsC
+      }
+  catch(err){
+        if(!this.events || this.events.length==0) this.events=this.alt_events
+    if(!this.newsC || this.newsC.length==0) this.newsC=this.alt_newsC
+  }
+
     }
   },
   data: function() {
@@ -128,7 +144,20 @@ export default {
       ],
       newsC: [
         
-      ]
+      ],
+      alt_events: [
+                {date: "12/05", message: "Understanding the Nanoscopic Structural Framework of Brain Astrocytes", color: "light", link: "https://www.cs.mcgill.ca/events/284/"},
+                {date: "11/13", message: "Virtual Collaboration Techniques to Catalyze Open Innovation", color: "dark", link: "https://www.cs.mcgill.ca/events/283/"},
+                {date: "09/17", message: "McGill IT Services Virtual Fair", color: "light", link: "https://www.cs.mcgill.ca/events/280/"},
+          ],
+      alt_newsC: [
+            {date: "Oct.25, 2020", post: "Virtual Open House 2020", color: "light", link: "https://www.cs.mcgill.ca/academic/undergrad/openhouse/"}, 
+            {date: "Oct.5, 2020", post: "Concerns related to COVID-19", color: "dark", link: "https://www.cs.mcgill.ca/academic/undergrad/openhouse/"}, 
+            {date: "Nov.5, 2020", post: "Three SOCS professors are awarded large grants to use AI to understand cancer", color: "light", link: "https://www.cs.mcgill.ca/news/132/"}, 
+            {date: "Oct.27, 2020", post: "Assistant Professor Oana Balmau wins CORE John Makepeace Bennett Award", color: "dark", link: "https://www.cs.mcgill.ca/news/131/"}, 
+            {date: "Sept.1, 2020", post: "Three Faculty Members Join the School of Computer Science", color: "light", link: "https://www.cs.mcgill.ca/news/128/"}, 
+            {date: "Sept.1, 2020", post: "Prof. Siva Reddy won the VentureBeat AI Innovation Award 2020", color: "dark", link: "https://www.cs.mcgill.ca/news/127/"}, 
+          ]
     };
   }
 };
