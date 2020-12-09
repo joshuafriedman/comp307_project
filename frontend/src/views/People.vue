@@ -99,15 +99,18 @@ export default {
             mounted(){
         this.people = JSON.parse(localStorage.data).people
         // code here
-        if(this.people.position == "directors") {
-                directors.add(this.people);
+        for(var person of this.people){
+        if(person == "directors") {
+                this.directors.push(person);
             }
-            else if (this.people.position == "professors") {
-                professors.add(this.people);
+            else if (person == "professors") {
+                this.professors.push(person);
             }
             else {
-                facultylecturers.add(this.people);
+                this.facultylecturers.push(person);
             }
+        }
+
         
         
     },
@@ -116,6 +119,20 @@ export default {
 
             this.people = JSON.parse(localStorage.data).people
             //code here
+            this.directors = []
+            this.professors = []
+            this.facultylecturers = []
+        for(var person of this.people){
+        if(person == "directors") {
+                this.directors.push(person);
+            }
+            else if (person == "professors") {
+                this.professors.push(person);
+            }
+            else {
+                this.facultylecturers.push(person);
+            }
+        }
             
 
         }
