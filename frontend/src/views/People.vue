@@ -99,6 +99,15 @@ export default {
             mounted(){
         this.people = JSON.parse(localStorage.data).people
         // code here
+        if(this.people.position == "directors") {
+                directors.add(this.people);
+            }
+            else if (this.people.position == "professors") {
+                professors.add(this.people);
+            }
+            else {
+                facultylecturers.add(this.people);
+            }
         
         
     },

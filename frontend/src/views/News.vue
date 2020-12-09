@@ -42,7 +42,7 @@ export default {
         data_ready: function(){
 
             this.newses = JSON.parse(localStorage.data).news
-
+            
         }
     },
         data: function(){
