@@ -13,9 +13,9 @@
               </splide-slide>
             </splide>
           </div>
-        </div>
+        </div> 
 
-        <div id= "news"> 
+      <div id= "news"> 
           <div id = "title"> News  </div>
           <a id = "light" class = "newsEvent" href= "https://www.cs.mcgill.ca/academic/undergrad/openhouse/">  
             <p id= "newsTitle"> Virtual Open House 2020 </p> 
@@ -45,23 +45,16 @@
         </div> 
     </div> 
 
+ 
     <div id = "flex"> 
       <div id= "events"> 
-        <div id = "title"> Upcoming Events</div>
-        <a id = "light" class = "event" href= "https://www.cs.mcgill.ca/events/284/">  
-            <div id = "calendar"> 12/05 </div> 
-            <div id= "eventTitle"> Understanding the Nanoscopic Structural Framework of Brain Astrocytes</div>
-        </a> 
-        <a id = "dark" class = "event" href = "https://www.cs.mcgill.ca/events/283/"> 
-            <div id = "calendar"> 11/13 </div> 
-            <div id = "eventTitle"> Virtual Collaboration Techniques to Catalyze Open Innovation </div>
-        </a>
-         <a id = "light" class = "event" href = "https://www.cs.mcgill.ca/events/280/">  
-            <div id = "calendar"> 09/17 </div> 
-            <div id = "eventTitle"> McGill IT Services Virtual Fair </div>
-        </a> 
-        <a id = "moreEvent" href = "https://www.cs.mcgill.ca/events/"> Click for More Events </a>
+          <div id = "title"> Upcoming Events</div>
+            <div class="card-container" v-for="event in events" :key="event.id">
+              <EventCard :date=event.date :message=event.message :color=event.color :link=event.link />
+            </div>
+            <a id = "moreEvent" href = "https://www.cs.mcgill.ca/events/"> Click for More Events </a>
       </div> 
+
 
       <div id= "hilight"> 
         <div id = "title"> December Highlights </div>
@@ -85,6 +78,7 @@
 <script>
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+import EventCard from "../components/EventCard.vue";
 
 export default {
   name: "Home",
@@ -93,24 +87,23 @@ export default {
   },
    components: {
     Splide,
-    SplideSlide
+    SplideSlide,
+    EventCard
   },
   data: function(){
       return {
           options: {
               type: 'loop',
               autoplay: true,
-          }
+          },
+          events: [
+                {date: "12/05", message: "Understanding the Nanoscopic Structural Framework of Brain Astrocytes", color: "light", link: "https://www.cs.mcgill.ca/events/284/"},
+                {date: "11/13", message: "Virtual Collaboration Techniques to Catalyze Open Innovation", color: "dark", link: "https://www.cs.mcgill.ca/events/283/"},
+                {date: "09/17", message: "McGill IT Services Virtual Fair", color: "light", link: "https://www.cs.mcgill.ca/events/280/"},
+            ]
       }
   },
-  methods: {
-    example1: function() {
-      alert("example 1 called");
-    },
-    example2: function() {
-      alert("example 2 called");
-    }
-  }
+
 };
 </script>
 
@@ -159,6 +152,10 @@ export default {
   flex: 0 1 560px; 
 }
 
+.card-container{
+  margin:-40px;
+}
+
 #hilight {
   margin:20px;
   flex: 0 1 645px; 
@@ -198,8 +195,6 @@ export default {
   }
 }
 
-
-
 #title{
   text-align: center;
   font-size: 25px;
@@ -207,18 +202,6 @@ export default {
   padding:10px;
   color: black;
   background-color: var(--mred);
-}
-
-#calendar {
-  font-size: 20px; 
-  display: grid;
-  place-items: center; 
-  width: 60px;
-  height: 80%;
-  background-color: #FFFFFA;
-  border-radius: 10px;
-  border: solid black 1px;
-  color: var(--mred);
 }
 
 #newsTitle{
@@ -256,20 +239,7 @@ export default {
   display:inline-flex;
 }
 
-
-.event{
-  width: 96.5%;
-  height: 20%;
-  border-bottom: 1px solid var(--navy);
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-right: 10px;
-  overflow: hidden;
-  display:flex;
-}
-
-
-.newsEvent:hover, #more:hover, .event:hover, #moreEvent:hover, section:hover{
+.newsEvent:hover, #more:hover, #moreEvent:hover, section:hover{
   cursor:pointer; 
   color: var(--mred);
   
@@ -290,7 +260,6 @@ export default {
   height: 12%;
   display: grid;
   place-items: center;
-  border-bottom: 1px solid var(--navy);
   font-weight: bold;
 }
 
@@ -312,7 +281,6 @@ export default {
   background-color: var(--dutch-white);
   flex: 1 1 50%;
 }
-
 
 #section:hover{
   color: var (--mred);
