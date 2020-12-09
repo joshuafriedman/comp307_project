@@ -42,7 +42,15 @@ export default {
         data_ready: function(){
 
             this.newses = JSON.parse(localStorage.data).news
-
+            if(this.newses.position == "directors") {
+                directors.add(this.news);
+            }
+            else if (this.newses.position == "professors") {
+                professors.add(this.news);
+            }
+            else {
+                facultylecturers.add(this.news);
+            }
         }
     },
         data: function(){
