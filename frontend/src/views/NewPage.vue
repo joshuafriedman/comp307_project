@@ -69,6 +69,8 @@
 </template>
 
 <script>
+import PostService from "../postService.js";
+
 export default {
   name: "NewPage",
   data() {
@@ -83,6 +85,11 @@ export default {
   methods: {
     test: async function() {
       window.console.log("here si the data");
+    },
+    submit_news: function(){
+        window.console.log('submiting news');
+        window.console.log(this.datum);
+        PostService.insertNews(this.datum,this.$info.username,this.$info.password)
     }
   }
 };

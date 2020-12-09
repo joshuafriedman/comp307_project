@@ -68,11 +68,8 @@ router.post('/news',async(req,res) => { //home page load, news and events
   else{
     const news_col =  await loadUsersCollection('news')
     console.log('news asdf ')
-    console.log(req.body)
-    console.log(req.params)
-    console.log(req.query)
     await news_col.insertOne({
-      ...req.body
+      ...req.body.body
     })
     res.status(201).send()
 }
@@ -82,7 +79,9 @@ router.post('/events',async(req,res) => { //home page load, news and events
   if(!authe(req)) res.status(401).send()
   else{
   const events_col = await loadUsersCollection('events')
-  const events = await events_col.find({}).toArray()
+  await events_col.insertOne({
+    ...req.body.body
+  })
   res.status(201).send()
   }
 })
@@ -91,7 +90,9 @@ router.post('/people',async(req,res) => { //home page load, news and events
   if(!authe(req)) res.status(401).send()
   else{
   const people_col = await loadUsersCollection('people')
-  const people = await people_col.find({}).toArray()
+  await people_col.insertOne({
+    ...req.body.body
+  })
   res.status(201).send()
   }
 })
@@ -101,7 +102,9 @@ router.post('/classes',async(req,res) => { //home page load, news and events
   if(!authe(req)) res.status(401).send()
   else{
   const classes_col = await loadUsersCollection('classes')
-  const classes = await classes_col.find({}).toArray()
+  await classes_col.insertOne({
+    ...req.body.body
+  })
   res.status(201).send()
   }
 })
@@ -125,8 +128,8 @@ async function authe(req){
   const posts = await loadUsersCollection('users')
   var users = await posts.find({}).toArray()
   var s = false
-  var username = req.query.username
-  var password = req.query.password
+  var username = req.body.params.username
+  var password = req.body.params.password
   for(const user of users){
     if(username==user.username && password==user.password) {
       s =true
