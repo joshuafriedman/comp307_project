@@ -35,7 +35,7 @@ export default {
     
     #main{
         width: 300px;
-        height: 400px;
+        height: 450px;
         margin: auto;
         font-size: 14px;
         margin: 20px;
@@ -63,7 +63,7 @@ export default {
 
     img{
         width: 300px; 
-        height: 250px;
+        height: 300px;
         border-radius: 20px 20px 0px 0px;
     }
     a{
